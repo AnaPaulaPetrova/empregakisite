@@ -1,0 +1,42 @@
+.container-all{
+    width: 100%;
+    max-width: 1000px;
+    margin:  0 auto;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.title h1{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #3e3e3e;
+}
+.vagas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+    gap: 20px;
+}
+.card-vagas{
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform.2s ease, box-shadow.2s ease;
+    border: 0.01px solid #0e44e7;
+    border-left: 5px solid #0e44e7;
+}
+.card-vagas:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+}
+.card-vagas h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+/* Requisitos */
+.card-vagas p,
+.card-vagas h4 {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.4;
+}
