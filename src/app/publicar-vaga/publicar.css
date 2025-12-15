@@ -1,0 +1,82 @@
+/* Container geral da página */
+.container-pagina {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+/* Caixa branca do formulário */
+.box-form {
+  width: 90%;
+  max-width: 900px;
+  background-color: #dddddd;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Título */
+.box-form h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #1e6091;
+}
+
+/* Inputs e textarea */
+.box-form input,
+.box-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #ccc;
+  border: 0.5px solid #1e6091 ;
+  color: #1e6091;
+}
+
+/* Remove resize do textarea */
+.box-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Labels */
+.box-form label {
+  font-weight: 600;
+  color: #1e6091;
+}
+
+/* Botão publicar */
+.box-form button {
+  width: 100%;
+  background-color: #23a37f;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+/* Hover do botão */
+.box-form button:hover {
+  background-color: #1e8d6d;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .box-form {
+    padding: 25px;
+  }
+
+  .box-form h2 {
+    font-size: 22px;
+  }
+}

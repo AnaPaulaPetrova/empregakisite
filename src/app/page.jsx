@@ -1,12 +1,14 @@
 import styles from "./page.module.css";
-import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <h1>Bem vindo ao EmpregAki!!!</h1>
-       <Link href={"/login"}>Login</Link>
-       <Link href={"/vagas"}>Vagas</Link>
-    </div>
+    <>
+    <main className={styles.container}>
+      <h1 className={styles.logo}>EMPREGAKI</h1>
+      <p className={styles.slogan}>
+        Conectando pessoas a oportunidades
+      </p>
+    </main>
+    </>
   );
 }

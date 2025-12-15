@@ -7,7 +7,6 @@ const database = new Pool ({
     ssl: {
      rejectUnauthorized: false //pois é obrigatório para conectar no NeonDB.
   }
-
 })
 
 export default database;

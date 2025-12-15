@@ -5,38 +5,56 @@
     padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
+/* Título */
 .title h1{
     text-align: center;
     font-size: 32px;
-    margin-bottom: 30px;
-    color: #3e3e3e;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
+.buscar-vaga {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 0.2px solid #ecedee;
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+/* GRID DE CARDS */
 .vagas-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
     gap: 20px;
 }
+/* CARD */
 .card-vagas{
+    background: #ffffff;
+    border-radius: 16px;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform.2s ease, box-shadow.2s ease;
-    border: 0.01px solid #0e44e7;
-    border-left: 5px solid #0e44e7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 .card-vagas:hover {
     transform: translateY(-5px);
-    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
 }
 .card-vagas h3 {
-    font-size: 20px;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1f3c88;
+    margin-bottom: 15px;
+    
 }
-/* Requisitos */
-.card-vagas p,
-.card-vagas h4 {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.4;
+/* Corpo */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.card-body .info {
+    font-size: 12px;
+    color: #1E80A8;
+    word-break: break-word;
 }

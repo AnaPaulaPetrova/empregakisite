@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Isso é um projeto [Next.js](https://nextjs.org) com [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# EmpregAki
+EmpregAki é uma aplicação web desenvolvida com Next.js cujo objetivo é divulgar vagas de emprego e apresentar informações sobre empresas cadastradas, de forma simples e acessível.
 
-First, run the development server:
+Este projeto foi criado utilizando o create-next-app e segue uma estrutura pensada para iniciantes em desenvolvimento web.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Descrição do Projeto
+O EmpregAki permite que usuários visualizem vagas de emprego disponíveis e consultem informações básicas sobre as empresas que oferecem essas vagas.
+
+Funcionalidades principais:
+- Listagem de vagas de emprego disponíveis;
+- Listagem de empresas cadastradas;
+- Visualização de dados de contato das empresas.
+
+## Tecnologias Utilizadas
+- Frame-Work:
+
+    [![My Skills](https://skillicons.dev/icons?i=next)](https://skillicons.dev)
+
+- FrontEnd:
+
+    [![My Skills](https://skillicons.dev/icons?i=js,html,css,react)](https://skillicons.dev)
+
+- BackEnd:
+
+    [![My Skills](https://skillicons.dev/icons?i=js,nodejs)](https://skillicons.dev)
+
+- Banco de dados:
+
+    [![My Skills](https://skillicons.dev/icons?i=vercel)](https://skillicons.dev)
+
+- Hospedagem e controle de versão:
+
+    [![My Skills](https://skillicons.dev/icons?i=github)](https://skillicons.dev)
+
+## Design do Projeto
+### Página Inicial (Home)
+![Página inicial](./public/pgInicial.png)
+
+### Página de Vagas Disponíveis
+![Página de Vagas Disponíveis](./public/vagas.png)
+
+### Página de Informações das Empresas
+![Página das Informações das Empresas](./public/empresas.png)
+
+
+## Endepoints do Projeto
+- ``http://localhost:3000/``
+ Direciona para a página inicial do projeto.
+
+- ``http://localhost:3000/vagas``
+ Exibe todas as vagas cadastradas e disponíveis para os usuários.
+```json
+[
+  {
+    "id": 1,
+    "title": "Desenvolvedor Front-end Júnior",
+    "description": "Atuará no desenvolvimento e manutenção de interfaces front-end para criar experiências modernas e acessíveis.",
+    "requirement": "Conhecimentos básicos em HTML, CSS e JavaScript. Noções de React. Vontade de aprender e trabalhar em equipe.",
+    "area": "Tecnologia da Informação",
+    "salary": "R$ 2.800,00",
+    "location":"Fortaleza - CE (Híbrido)",
+    "workload": "40h semanais",
+    "num_vagas": 2,
+    "contact_vaga": "recrutamento@techwave.com.br",
+    "deadline": "2025-03-30",
+    "id_cnpj": "10000100000001"
+  },
+]
+
+```
+- ``http://localhost:3000/empresas``
+Mostra as principais informações das empresas cadastradas no sistema.
+```json
+[
+  {
+    "cnpj": "12345678000199",
+    "name": "TechWave Soluções Digitais",
+    "email": "contato@techwave.com.br",
+    "contact": "(85) 99999-1234"
+  },
+]
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como Execultar o Back-end
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+O back-end está integrado ao próprio projeto Next.js, utilizando rotas e conexão com banco de dados hospedado na Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para executá-lo, basta iniciar o projeto normalmente com:
 
-## Learn More
+    npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+As requisições são feitas diretamente pelas páginas do projeto.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Funcionalidades
+- Exibição de vagas de emprego;
+- Consulta de empresas cadastradas;
+- Integração com banco de dados;
+- Interface simples e intuitiva;
+- Projeto organizado para fins educacionais.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Implementações Futuras
+- [x] Mostrar Vagas;
+- [x] Mostrar Empresas cadastradas
+- [x] Barra de Pesquisas;
+- [] Cadastro de novas vagas via formulário;
+- [] Cadastro de empresas pelo sistema;
+- [] Sistema de login e autenticação;
+- [] Filtro e busca de vagas por área;
+- [] Página de detalhes da vaga;
+- [] Melhorias no layout e responsividade.
 
-## Deploy on Vercel
+## Contato
+Projeto desenvolvido para fins acadêmicos e de aprendizado.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📧 Email: anapaulapetrova23@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🌐 GitHub: https://github.com/AnaPaulaPetrova
+
+🔗 LinkedIn: https://www.linkedin.com/in/ana-paula-silva-lopes-7408b0363?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
