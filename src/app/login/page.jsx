@@ -28,7 +28,7 @@ export default function Login() {
 
   return (
     <div className="login-container">
-        <h2 className="title-login">Acesse sua conta</h2>
+        <h2 className="login-title">Acesse sua conta</h2>
         <p className="login-subtitle">Entre com seus dados para continuar</p>
 
         {error && <div className="error">{error}</div>}

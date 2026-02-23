@@ -21,7 +21,8 @@ export default function Header() {
             <li>Blog</li>
           </ul>
         </nav>
-        <button className={styles.button}>Cadastro</button>
+        <Link href={"/cadastroEmpresa"}>
+        <button className={styles.button}>Cadastro</button></Link>
       </header>
   );
 }

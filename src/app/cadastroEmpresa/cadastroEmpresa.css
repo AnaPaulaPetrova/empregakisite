@@ -1,27 +1,50 @@
-
-.login-container{
-    width: 350px;
+.cadastroEmp-container{
+    width: 450px;
     margin: 60px auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* Titulos */
-.login-title {
+.cadastroEmp-title {
     font-size: 26px;
     font-weight: bold;
     color: #0d3b66;
 }
-.login-subtitle {
+.cadastroEmp-subtitle {
     margin-top: 6px;
     margin-bottom: 20px;
     color: #5f6c7b;
     font-size: 14px;
 }
 /* formulario */
-.login-form {
+.CadastroEmp-form {
     display: flex;
     flex-direction: column;
     text-align: left;
+}
+.cadastro-group {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+.cadastro-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.cadastro-group input[type="radio"] {
+    width: 50px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cadastro-group label {
+    cursor: pointer;
+    font-weight: 500;
 }
 label {
     margin-bottom: 4px;
@@ -29,6 +52,7 @@ label {
     color: #0d3b66;
 }
 input {
+    width: 300px;
     margin-bottom: 16px;
     padding: 10px;
     border-radius: 6px;
@@ -36,13 +60,13 @@ input {
     font-size: 14px;
 }
 /* erro */
-.login-error {
+.CadastroEmp-error {
     color: red;
     margin-bottom: 10px;
     font-size: 13px;
 }
 /* Botoes */
-.login-button {
+/* .CadastroEmp-button {
     width: 100px;
     padding: 10px;
     background-color: #2e9d8f;
@@ -53,23 +77,23 @@ input {
     font-size: 16px;
     margin-bottom: 10px;
 }
-.login-button:hover {
+.CadastroEmp-button:hover {
     background-color: #23867a;
-}
+} */
 
 /* esqueci a senha */
-.login-forgot {
+.cadastroEmp-forgot {
     display: block;
     margin: 10px 0;
     font-size: 14px;
     color: #1e6091;
     text-decoration: none;
 }
-.login-forgot:hover {
+.cadastroEmp-forgot:hover {
     text-decoration: underline;
 }
 /* separador */
-.login-divider {
+.cadastroEmp-divider {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +102,7 @@ input {
     color: #6b7280;
     font-size: 14px;
 }
-.login-divider span {
+.cadastroEmp-divider span {
     flex: 1;
     height: 1px;
     background: #ccc;
@@ -111,8 +135,9 @@ input {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: #fbfafa;
+    color: #f5f3f3;
     font-weight: bold;
+    margin: 15px;
 }
 .google-button img {
     width: 18px;

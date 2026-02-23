@@ -1,0 +1,42 @@
+.banner-container {
+    width: 1320px;
+    height: 433px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 60px;
+}
+.banner-text{
+    width: 655px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px;
+    border: 1px solid green;
+    
+}
+.banner-text h2 {
+    font-size: 60px;
+    padding-bottom: 30px;
+}
+.banner-text p {
+    font-size: 24px;
+    padding-bottom: 25px;
+    
+}
+.btn-ver-vagas {
+    width: 190px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: #FF7A5E;
+    border-style: none;
+    color: white;
+    font-size: 29px;
+}
+.logo-image{
+    width: 650px;
+    height: 430px;
+    border: 1px solid;
+
+}
