@@ -12,16 +12,13 @@ export default function Header() {
         {/* Menu */}
         <nav className={styles.menu}>
           <ul>
-            <li>
-              <Link href={"/vagas"}>Vagas</Link>
-            </li>
-            <li>
-              <Link href={"/empresas"}>Empresas</Link>
-            </li>
-            <li>Blog</li>
+            <li><Link href={"/vagas"}>Vagas</Link></li>
+            <li><Link href={"/empresas"}>Empresas</Link></li>
+            <li><Link href={"/quemSomos"}>Quem Somos</Link></li>
+            <li><Link href={"/login"}>Login</Link></li>
           </ul>
         </nav>
-        <Link href={"/cadastroEmpresa"}>
+        <Link href={"/cadastroCandidato"}>
         <button className={styles.button}>Cadastro</button></Link>
       </header>
   );

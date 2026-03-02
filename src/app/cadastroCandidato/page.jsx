@@ -20,20 +20,22 @@ export default function cadastroEmp() {
                         id="souEmpresa"
                         name="cadastro"
                         //value={souEmpresa}
+                        // checked={tipoCadastro === "empresa"}
                         //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label for="souEmpresa">Sou Empresa</label>
+                    <label htmlFor="souEmpresa">Sou Empresa</label>
                     <input
                         className="input"
-                        type="radio"
+                        type="radio" 
                         id="souCandidato"
                         name="cadastro"
                         //value={souCandidato}
+                        // checked={tipoCadastro === "candidato"}
                         //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label for="souCandidato">Sou Candidato</label>
+                    <label htmlFor="souCandidato">Sou Candidato</label>
                 </div>
             </div>
             <label></label>

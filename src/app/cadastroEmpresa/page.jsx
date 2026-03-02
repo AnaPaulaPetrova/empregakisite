@@ -23,7 +23,7 @@ export default function cadastroEmp() {
                         //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label for="souEmpresa">Sou Empresa</label>
+                    <label htmlFor="souEmpresa">Sou Empresa</label>
                     <input
                         className="input"
                         type="radio"
@@ -33,7 +33,7 @@ export default function cadastroEmp() {
                         //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label for="souCandidato">Sou Candidato</label>
+                    <label htmlFor="souCandidato">Sou Candidato</label>
                 </div>
             </div>
             <label></label>

@@ -6,7 +6,7 @@ import "./vagaCard.css";
 export default function BuscarVagas({ vagas }) {
     const [busca, setBusca] = useState("");
 
-    const vagasFiltradas = vagas.filter((vagas) => vagas.title.toLowerCase().includes(busca.toLocaleLowerCase())
+    const vagasFiltradas = vagas.filter((vagas) => vagas.titulo.toLowerCase().includes(busca.toLocaleLowerCase())
 );
   return (
     <div className="container-all">
@@ -28,12 +28,12 @@ export default function BuscarVagas({ vagas }) {
             vagasFiltradas.map((vaga) => (
                 <div className="card-vagas" key={vaga.id}>
                     <div className="card-header">
-                        <h3>{vaga.title}</h3>
+                        <h3>{vaga.titulo}</h3>
                 </div>
                 <div className="card-body">
-                    <p className="info">{vaga.location}</p>
-                    <p className="info">{vaga.salary}</p>
-                    <p className="info">{vaga.description}</p>
+                    <p className="info">📍{vaga.localizacao}</p>
+                    <p className="info">R$ {vaga.salario}</p>
+                    <p className="info">📝{vaga.descricao}</p>
                 </div>
                 </div>
             ))

@@ -1,0 +1,90 @@
+.beneficios {
+  max-width: 1320px;
+  width: 100%;
+  padding: 80px 10%;
+  background-color: #f5f7fa; 
+  margin: 0 auto;
+}
+
+.beneficios h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f3b57;
+  margin-bottom: 50px;
+}
+
+/* Grid principal */
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Benefícios simples (Transparência e Agilidade) */
+.beneficios-grid > div:not(.publicar-box) {
+  background-color: transparent;
+}
+
+.beneficios-grid h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f3b57;
+  margin-bottom: 10px;
+}
+
+.beneficios-grid p {
+  font-size: 14px;
+  color: #5c6b7a;
+  line-height: 1.6;
+}
+
+/* BOX AZUL */
+
+.publicar-box {
+  background: linear-gradient(135deg, #2f6fb3, #1f3b57);
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.publicar-box h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.publicar-box p {
+  color: #e3edf7;
+  margin-bottom: 25px;
+}
+
+.publicar-box button {
+  background-color: #ffffff;
+  color: #1f3b57;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.publicar-box button:hover {
+  background-color: #e6e6e6;
+}
+
+/* RESPONSIVO  */
+
+@media (max-width: 900px) {
+  .beneficios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publicar-box {
+    margin-top: 20px;
+  }
+}

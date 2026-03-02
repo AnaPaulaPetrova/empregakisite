@@ -1,6 +1,6 @@
-import "./VagaCard.css";
+import "./vagasCard.css";
 
-export default function VagaCard({ title, empresa }) {
+export default function VagasCard({title, empresa}) {
   return (
    <> 
     <div className="vaga-card">

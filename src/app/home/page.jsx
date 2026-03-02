@@ -1,4 +1,4 @@
-// import VagaCard from '@/components/VagasCard/page'
+import VagasCard from "@/components/VagasCard";
 import React from 'react'
 import "./Home.css"
 
@@ -22,13 +22,16 @@ export default function Home() {
 
     {/* Cards das principais vagas */}
     <section className="vagas-section">
+      <div className="vagas-header">
         <h2>Vagas em destaque</h2>
+        <button className="bnt-VerTodas">Ver todas</button>
+      </div>
 
         <div className="vagas-cards">
-            {/* <VagaCard
+            <VagasCard
                 title="Operador de Máquinas"
                 Empresa="Horaca Editora"
-            /> */}
+            />
 
             {/* <VagaCard
                 title="Programador"
@@ -36,7 +39,7 @@ export default function Home() {
             />     */}
         </div>
 
-        <button className="bnt-VerTodas">Ver todas</button>
+        
 
     </section>
     </>
