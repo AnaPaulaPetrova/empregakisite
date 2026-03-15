@@ -58,3 +58,61 @@
     color: #1E80A8;
     word-break: break-word;
 }
+h1 {
+    text-align: center;
+    color: #1f3c88;
+    margin-top: 15px;
+}
+.containerPagina{
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px;
+
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+}
+.containerVagas {
+    max-width: 1200px;
+    margin:  0 auto;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.cardVaga {
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-height: 200px;
+    background: #ffffff;
+    color: #1E80A8;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cardVaga:hover{
+    transform: translateY(-3px);
+}
+.infoVaga{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 14px;
+    color: #1E80A8;
+}
+
+.cardVaga a {
+    text-decoration: none;
+    color: inherit;
+}
+.cardVaga p {
+    font-size: 14px;
+    
+}
