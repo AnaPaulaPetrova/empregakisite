@@ -1,0 +1,25 @@
+.containerCard {
+    max-width: 1200px;
+    margin:  10px auto;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    color: #0F3A5F;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.infoVaga {
+    display: grid;
+    padding: 15px;
+    gap: 10px;
+}
+.descricao {
+    margin: 15px 0;
+}
+.botoes {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

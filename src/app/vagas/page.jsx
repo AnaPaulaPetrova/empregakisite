@@ -1,9 +1,8 @@
-import "./vagaCard.css";
 import database from "@/database/database";
+import "./vagaCard.css";
 import React from 'react'
-import BuscarVagas from "./BuscarVagas";
 import Link from "next/link"
-
+import BuscarVagas from"./BuscarVagas"
 // export default async function vagasPage() {
 //  const sql = "select * from vagasdisponiveis";
 //  const responseDB = await database.query(sql);
@@ -13,50 +12,98 @@ import Link from "next/link"
 //   return <BuscarVagas vagas={responseDB.rows} />
 
 // }
-async function getVagas(){
+// async function getVagas(){
 
- const res = await fetch("http://localhost:3000/api/vagas",{
-  cache:"no-store"
- })
+//  const res = await fetch("/api/vagas",{
+//   cache:"no-store"
+//  })
 
- return res.json()
-}
+//     if(!res.ok){
+//       throw new Error("Erro ao buscar vagas")
+//  }
+
+
+//  return res.json()
+// }
+
+// export default async function vagasPage(){
+
+//  const vagas = await getVagas()
+
+//  return(
+
+//   <div className="ContainerPagina">
+
+//    <h1>Vagas disponíveis</h1>
+
+//  <div className="containerVagas">
+//    {vagas.map(vaga => (
+              
+//         <Link key={vaga.id} href={`/vagas/${vaga.slug}-${vaga.id}`} className="cardVaga">
+          
+//           <h3>{vaga.titulo}</h3>
+         
+//           <h4>{vaga.empresa}</h4>
+          
+//           <div className="infoVaga">
+//             <span>📍{vaga.localizacao}</span>
+//             <span>R$ {vaga.salario}</span>
+//           </div>
+          
+//           <p>{vaga.descricao}</p>
+//           {/* <p>Status: {vaga.status}</p> */}
+
+//           {/* <a href={`/vagas/editar/${vaga.id}`}>Editar</a> */}
+//         </Link>
+      
+//     ))}
+   
+//     </div>
+//   </div>
+//  )
+// }
 
 export default async function vagasPage(){
 
- const vagas = await getVagas()
+ const sql = "SELECT * FROM vagasdisponiveis ORDER BY created_at DESC";
+ const responseDB = await database.query(sql);
 
+ const vagas = responseDB.rows;
+ 
+//return <BuscarVagas empresas={responseDB.rows} />
  return(
 
   <div className="ContainerPagina">
 
    <h1>Vagas disponíveis</h1>
 
- <div className="containerVagas">
-   {vagas.map(vaga => (
-      <div key={vaga.id} className="cardVaga">
-        
-        <Link href={`/vagas/${vaga.slug}-${vaga.id}`} className="cardVaga">
-          
-          <h3>{vaga.titulo}</h3>
-         
-          <h4>{vaga.empresa}</h4>
-          
-          <div className="infoVaga">
-            <span>📍{vaga.localizacao}</span>
-            <span>R$ {vaga.salario}</span>
-          </div>
-          
-          <p>{vaga.descricao}</p>
-          {/* <p>Status: {vaga.status}</p> */}
+   <div className="containerVagas">
 
-          {/* <a href={`/vagas/editar/${vaga.id}`}>Editar</a> */}
-        </Link>
-      </div>
-    
-   ))}
-   
-  </div>
+    {vagas.map(vaga => (
+
+      <Link
+        key={vaga.id}
+        href={`/vagas/${vaga.id}`}
+        className="cardVaga"
+      >
+
+        <h3>{vaga.titulo}</h3>
+
+        <h4>{vaga.empresa}</h4>
+
+        <div className="infoVaga">
+          <span>📍 {vaga.localizacao}</span>
+          <span>R$ {vaga.salario}</span>
+        </div>
+
+        <p>{vaga.descricao}</p>
+
+      </Link>
+
+    ))}
+
+   </div>
+
   </div>
  )
 }

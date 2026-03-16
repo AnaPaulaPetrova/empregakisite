@@ -7,7 +7,7 @@ export default function EmpresasClient({ empresas }) {
   const [busca, setBusca] = useState("");
 
   const empresasFiltradas = empresas.filter((empresa) =>
-    empresa.name.toLowerCase().includes(busca.toLowerCase())
+    empresa.nome_da_empresa.toLowerCase().includes(busca.toLowerCase())
   );
   return (
     <div className="container-all">
@@ -29,11 +29,11 @@ export default function EmpresasClient({ empresas }) {
           empresasFiltradas.map((empresa) => (
             <div className="card-empresas" key={empresa.cnpj}>
               <div className="card-header">
-                <h3>{empresa.name}</h3>
+                <h3>{empresa.nome_da_empresa}</h3>
               </div>
               <div className="card-body">
-                <p className="info">{empresa.contact}</p>
-                <p className="info">{empresa.email}</p>
+                <span className="info">{empresa.contato}</span>
+                <span className="info">{empresa.endereco}</span>
               </div>
             </div>
           ))
