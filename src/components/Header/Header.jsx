@@ -14,7 +14,7 @@ export default function Header() {
           <ul>
             <li><Link href={"/vagas"}>Vagas</Link></li>
             <li><Link href={"/empresas"}>Empresas</Link></li>
-            <li><Link href={"/quemSomos"}>Quem Somos</Link></li>
+            <li><Link href={"/quem-somos"}>Quem Somos</Link></li>
             <li><Link href={"/login"}>Login</Link></li>
           </ul>
         </nav>

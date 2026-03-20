@@ -1,0 +1,101 @@
+.perfilContainer{
+    max-width: 1200px;
+    background:#f5f5f5;
+    padding:40px;
+    display:flex;
+    justify-content:center;
+    margin: 0 auto;
+}
+
+.perfilCard{
+    background:white;
+    width:100%;
+    max-width:1000px;
+    border-radius:10px;
+    padding:40px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.perfilTopo{
+    display:flex;
+    gap:30px;
+    margin-bottom:30px;
+}
+
+.empresaLogo{
+    width:120px;
+    height:120px;
+    background:#eee;
+    border-radius:6px;
+}
+
+.empresaInfo h1{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.info{
+    color:#555;
+    margin:5px 0;
+}
+
+.btnVaga{
+    margin-top:10px;
+    background:#2f9e8f;
+    border:none;
+    color:white;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.btnVaga:hover{
+    background:#23867a;
+}
+
+.empresaDescricao{
+    margin-top:20px;
+}
+
+.empresaDescricao h2{
+    margin-top:25px;
+    margin-bottom:10px;
+    color:#1f3c5a;
+}
+
+.empresaDescricao p{
+    color:#444;
+    line-height:1.6;
+}
+
+.vagas{
+    margin-top:30px;
+}
+
+.vagas h2{
+    margin-bottom:15px;
+    color:#1f3c5a;
+}
+
+.vagasGrid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.vagaCard{
+    background:white;
+    border-radius:8px;
+    padding:15px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+.vagaCard h3{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.vagaCard p{
+    font-size:14px;
+    color:#666;
+}

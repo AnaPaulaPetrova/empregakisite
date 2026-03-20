@@ -1,0 +1,106 @@
+.vaga-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.vaga-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.vaga-subtitle {
+  color: #6b6b6b;
+  margin-bottom: 30px;
+}
+
+.vaga-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+.input-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #1b1b1b;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dadada;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.input-box_textarea,
+.input-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: none;
+  color: black;
+}
+
+.textarea-box {
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 18px;
+  color: #7a7a7a;
+  margin-right: 10px;
+}
+
+.top-icon {
+  margin-top: 5px;
+}
+
+.date-input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 12px 25px;
+  border-radius: 10px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.draft {
+  background: #5a5a5a;
+  color: white;
+}
+
+.publish {
+  background: #2fbf7c;
+  color: white;
+}
+.publish:hover {
+  background: #27a86b;
+}

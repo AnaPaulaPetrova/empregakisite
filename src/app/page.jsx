@@ -5,6 +5,7 @@ import React from 'react'
 import VagasCard from "@/components/VagasCard/VagasCard";
 import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
            <p>
              O lugar onde você encontra oportunidades que se encaixam no seu perfil.
            </p>
-           <button className={styles.btnVerVagas}>Ver vagas</button>
+           <Link href={"./vagas"}><button className={styles.btnVerVagas}>Ver vagas</button></Link>
          </div>
    
          <div className={styles.logoImage}>
@@ -41,17 +42,17 @@ export default function Home() {
        <section className={styles.vagasSection}>
          <div className={styles.vagasHeader}>
            <h2>Vagas em destaque</h2>
-           <button className={styles.bntVerTodas}>Ver todas</button>
+           <Link href={"./vagas"}><button className={styles.bntVerTodas}>Ver todas</button></Link>
          </div>
    
            <div className={styles.vagasCards}>
             <VagasCard 
-                   title="Operador de Máquinas"
+                   titulo="Operador de Máquinas"
                    empresa="Horaca Editora"
              />
    
             <VagasCard
-                   title="Programador"
+                   titulo="Programador"
                    empresa="Coneta Sequer"
              />
 

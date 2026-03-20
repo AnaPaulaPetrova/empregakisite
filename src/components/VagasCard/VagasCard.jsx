@@ -1,12 +1,18 @@
+import database from "@/database/database";
 import "./vagasCard.css";
 
-export default function VagasCard({title, empresa}) {
+export default async function VagasCard() {
+
+  const sql = "SELECT * FROM vagasdisponiveis ORDER BY created_at DESC";
+ const responseDB = await database.query(sql);
+
+ const vagas = responseDB.rows;
   return (
    <> 
     <div className="vaga-card">
-        <h3>{title}</h3>
+        <h3>{vagas.titulo}</h3>
         <div className="vaga-img"></div>
-        <p>{empresa}</p>
+        <p>{vagas.empresa}</p>
       </div>
     </>
   );
