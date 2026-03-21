@@ -70,40 +70,6 @@ export default async function vagasPage(){
 
  const vagas = responseDB.rows;
  
-//return <BuscarVagas empresas={responseDB.rows} />
- return(
-
-  <div className="ContainerPagina">
-
-   <h1>Vagas disponíveis</h1>
-
-   <div className="containerVagas">
-
-    {vagas.map(vaga => (
-
-      <Link
-        key={vaga.id}
-        href={`/vagas/${vaga.id}`}
-        className="cardVaga"
-      >
-
-        <h3>{vaga.titulo}</h3>
-
-        <h4>{vaga.empresa}</h4>
-
-        <div className="infoVaga">
-          <span>📍 {vaga.localizacao}</span>
-          <span>R$ {vaga.salario}</span>
-        </div>
-
-        <p>{vaga.descricao}</p>
-
-      </Link>
-
-    ))}
-
-   </div>
-
-  </div>
- )
+return <BuscarVagas vagas={vagas} />
+ 
 }

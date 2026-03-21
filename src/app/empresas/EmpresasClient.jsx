@@ -27,15 +27,32 @@ export default function EmpresasClient({ empresas }) {
           <p>Nenhuma empresa encontrada</p>
         ) : (
           empresasFiltradas.map((empresa) => (
-            <div className="card-empresas" key={empresa.cnpj}>
-              <div className="card-header">
-                <h3>{empresa.nome_da_empresa}</h3>
-              </div>
-              <div className="card-body">
-                <span className="info">{empresa.contato}</span>
-                <span className="info">{empresa.endereco}</span>
-              </div>
-            </div>
+            // <div className="card-empresas" key={empresa.cnpj}>
+            //   <div className="card-header">
+            //     <h3>{empresa.nome_da_empresa}</h3>
+            //   </div>
+            //   <div className="card-body">
+            //     <span className="info">{empresa.contato}</span>
+            //     <span className="info">{empresa.endereco}</span>
+            //   </div>
+            // </div>
+            <Link
+        key={empresas.cnpj}
+        href={`/empresas/${empresas.cnpj}`}
+        className="cardVaga"
+      >
+
+        <h3>{empresa.titulo}</h3>
+        <h4>{empresa.contato}</h4>
+
+        <div className="infoVaga">
+          <span>📍 {empresa.localizacao}</span>
+          <span>R$ {empresa.salario}</span>
+        </div>
+
+        <p>{vaga.descricao}</p>
+      </Link>
+
           ))
         )}
       </div>

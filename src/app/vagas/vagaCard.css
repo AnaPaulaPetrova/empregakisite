@@ -1,104 +1,44 @@
 .container-all{
     width: 100%;
-    max-width: 1000px;
-    margin:  0 auto;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* Título */
 .title h1{
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #2c3e50;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2c3e50;
 }
-.buscar-vaga {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 0.2px solid #ecedee;
-    background-color: #ffffff;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    font-size: 14px;
+.buscarVaga {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 0.2px solid #ecedee;
+  background-color: #ffffff;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 14px;
 }
 /* GRID DE CARDS */
 .vagas-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(260px, 1fr));
-    gap: 20px;
-}
-/* CARD */
-.card-vagas{
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.card-vagas:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.15);
-}
-.card-vagas h3 {
-    font-size: 18px;
-    color: #1f3c88;
-    margin-bottom: 15px;
-    
-}
-/* Corpo */
-.card-body {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.card-body .info {
-    font-size: 12px;
-    color: #1E80A8;
-    word-break: break-word;
-}
-h1 {
-    text-align: center;
-    color: #1f3c88;
-    margin-top: 15px;
-}
-.containerPagina{
-    max-width: 1200px;
-    margin: auto;
-    padding: 30px;
-
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 40px;
-}
-.containerVagas {
-    max-width: 1200px;
-    margin:  0 auto;
-    padding: 30px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
 }
 .cardVaga {
-    flex: 1 1 300px;
-    max-width: 400px;
-    min-height: 200px;
     background: #ffffff;
-    color: #1E80A8;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .cardVaga:hover{
-    transform: translateY(-3px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 .infoVaga{
     display: flex;
@@ -115,4 +55,4 @@ h1 {
 .cardVaga p {
     font-size: 14px;
     
-}
+} 
