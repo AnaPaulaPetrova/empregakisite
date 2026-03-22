@@ -4,7 +4,7 @@
     padding: 30px 20px;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    color: #0F3A5F;
+    color: var(--cor-segundaria);
 
     display: flex;
     flex-direction: column;
@@ -22,4 +22,31 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-around;
+}
+.localizacao {
+    background-color: var(--cor-principal);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+
+}
+.localizacao:hover{
+    transform: translateY(-3px);
+}
+.inscreva {
+    background-color: var(--cor-botao-segundaria);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+.inscreva:hover{
+    transform: translateY(-3px);
 }

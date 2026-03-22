@@ -1,6 +1,26 @@
+import database from "@/database/database";
 import styles from "./perfilEmp.module.css";
+import Link from "next/link";
 
-export default function PerfilEmpresa() {
+export default async function PerfilEmpresa({ params}) {
+  
+   const empresaResponse = await database.query(
+    "SELECT * FROM empresas LIMIT 1"
+  );
+
+  const empresa = empresaResponse.rows[0];
+
+  if (!empresa) {
+    return <p>Empresa não encontrada</p>;
+  }
+
+  const vagasResponse = await database.query(
+    "SELECT * FROM vagasdisponiveis WHERE cnpj_empresa = $1",
+    [empresa.nome_da_empresa]
+  );
+
+  const vagas = vagasResponse.rows; 
+
   return (
     <main className={styles.perfilContainer}>
 
@@ -11,19 +31,19 @@ export default function PerfilEmpresa() {
           <div className={styles.empresaLogo}></div>
 
           <div className={styles.empresaInfo}>
-            <h1>Nome da Empresa</h1>
+            <h1>{empresa.nome_da_empresa}</h1>
 
             <p className={styles.info}>
-              📞 Contato: (xx) x xxxx-xxxx
+              📞 {empresa.contato}
             </p>
 
             <p className={styles.info}>
-              📍 Local: Rua sem saída em volta
+              📍 {empresa.endereco}
             </p>
 
-            <button className={styles.btnVaga}>
+            <Link href={"./vagas/criar"}><button className={styles.btnVaga}>
               Anunciar Vaga
-            </button>
+            </button></Link>
           </div>
 
         </div>
@@ -32,26 +52,21 @@ export default function PerfilEmpresa() {
 
           <h2>Sobre a empresa</h2>
           <p>
-            It is a long established fact that a reader will be distracted by the readable
-            content of a page when looking at its layout. The point of using Lorem Ipsum
-            is that it has a more-or-less normal distribution of letters.
+            {empresa.sobre_a_empresa}
           </p>
 
           <h2>Diferencias</h2>
 
           <p>
-            <strong>Missão:</strong> combined with a handful of model sentence structures,
-            to generate Lorem Ipsum which looks reasonable.
+            <strong>Missão:</strong> {empresa.missao}
           </p>
 
           <p>
-            <strong>Visão:</strong> combined with a handful of model sentence structures,
-            to generate Lorem Ipsum which looks reasonable.
+            <strong>Visão:</strong> {empresa.visao}
           </p>
 
           <p>
-            <strong>Valores:</strong> combined with a handful of model sentence structures,
-            to generate Lorem Ipsum which looks reasonable.
+            <strong>Valores:</strong> {empresa.valor}
           </p>
 
         </div>
@@ -61,28 +76,16 @@ export default function PerfilEmpresa() {
           <h2>Vagas disponíveis</h2>
 
           <div className={styles.vagasGrid}>
-
-            <div className={styles.vagaCard}>
-              <h3>Título da vaga</h3>
-              <p>Número de inscritos 01</p>
-            </div>
-
-            <div className={styles.vagaCard}>
-              <h3>Título da vaga</h3>
-              <p>Número de inscritos 01</p>
-            </div>
-
-            <div className={styles.vagaCard}>
-              <h3>Título da vaga</h3>
-              <p>Número de inscritos 01</p>
-            </div>
-
+            {vagas.map((vaga) => (
+              <div key={vaga.id} className={styles.vagaCard}>
+                <h3>{vaga.titulo}</h3>
+                <p>Número de inscritos: {vaga.inscritos || 0}</p>
+              </div>
+            ))}
           </div>
-
         </div>
 
       </section>
-
     </main>
   );
 }

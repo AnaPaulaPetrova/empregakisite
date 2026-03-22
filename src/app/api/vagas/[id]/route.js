@@ -1,5 +1,4 @@
 import database from "@/database/database";
-import React from 'react'
 
 export async function PUT(req, {params}) {
     const dados = await req.json()

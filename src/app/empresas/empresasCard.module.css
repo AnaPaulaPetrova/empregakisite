@@ -1,4 +1,4 @@
-.container-all {
+.containerAll {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
@@ -6,14 +6,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 /* Título */
-.title h1 {
+.titulo h1 {
   text-align: center;
   font-size: 32px;
   margin-bottom: 20px;
-  color: #2c3e50;
+  color: var(--cor-principal);
 }
 
-.buscar-empresas {
+.buscarEmpresas {
   width: 100%;
   padding: 12px 16px;
   border-radius: 10px;
@@ -25,14 +25,14 @@
 }
 
 /* GRID DE CARDS */
-.empresas-list {
+.empresasList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 20px;
 }
 
 /* CARD */
-.card-empresas {
+.cardEmpresas {
   background: #ffffff;
   border-radius: 16px;
   padding: 20px;
@@ -42,28 +42,23 @@
 }
 
 /* Hover elegante */
-.card-empresas:hover {
+.cardEmpresas:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* Cabeçalho */
-.card-header h3 {
+.cardInfo h3 {
   font-size: 18px;
-  color: #1f3c88;
-  margin-bottom: 15px;
+  color: var(--cor-segundaria);
 }
 
 /* Corpo */
-.card-body {
+.cardInfo {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
-}
-
-.card-body .info {
   font-size: 14px;
-  color: #1E80A8;
+  color: var(--cor-texto);
   word-break: break-word;
 }

@@ -1,5 +1,4 @@
 import database from "@/database/database";
-import React from 'react'
 
 
 export async function GET() {
@@ -14,27 +13,38 @@ export async function GET() {
 
 }
 // alimentar o banco de dados
-export  async function POST(req) {
-    const dados = await req.json()
+    export async function POST(request) {
+    try {
+        const dados = await request.json();
+       
+        const {cnpjEmpresa, titulo, descricao, requisitos, areaAtuacao, salario, localizacao, cargaHoraria, numeroVagas, contato, dataLimite} = dados;
+        
+             console.log("Dados recebido", dados);
+             console.log({
+                cnpjEmpresa,
+                titulo,
+                descricao,
+                requisitos,
+                areaAtuacao,
+                salario,
+                localizacao,
+                cargaHoraria,
+                numeroVagas,
+                contato,
+                dataLimite
+                });
+            await database.query(
+            `INSERT INTO vagasdisponiveis (cnpj_empresa, titulo, descricao, requisitos, areaatuacao, salario, localizacao, cargahoraria, numerovagas, contato, dataLimite) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 )`,
+            [cnpjEmpresa, titulo, descricao, requisitos, areaAtuacao,salario, localizacao, cargaHoraria, numeroVagas, contato, dataLimite]
+        );
 
-    const sql = ` INSERT INTO vagasdisponiveis (empresa, titulo, descricao, requisitos, areaatuacao, salario,  Localizacao, cargahoraria, numerovagas, contato )
-    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) `;
-
-    await database.query(sql, [
-        dados.empresa,
-        dados.titulo,
-        dados.descricao,
-        dados.requisitos,
-        dados.areaatuacao,
-        dados.salario,
-        dados.localizacao,
-        dados.cargahoraria,
-        dados.numerovagas,
-        dados.contato
-    ])
-    
-    return Response.json({message: "Vaga criada"})
-
+        return Response.json({ message: "Vaga criada com sucesso" })
+    } catch (error) {
+        console.log(error);
+            return Response.json({erro: "Erro ao salvar vaga"}, {status: 500}
+        )
+    }
 }
+
 
 

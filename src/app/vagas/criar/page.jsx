@@ -3,195 +3,199 @@
 import { useRouter } from "next/navigation"
 import { FaRegMoneyBillAlt } from "react-icons/fa"
 import {
- FiBriefcase,
- FiFileText,
- FiMapPin,
- FiClock,
- FiUsers,
- FiPhone
+  FiBriefcase,
+  FiFileText,
+  FiMapPin,
+  FiClock,
+  FiUsers,
+  FiPhone
 } from "react-icons/fi"
-
 import styles from "./criarVagas.module.css"
 
-export default function CriarVaga(){
+export default function CriarVaga() {
 
- const router = useRouter()
+  const router = useRouter()
 
- async function enviar(e){
+  async function enviar(e) {
+    e.preventDefault()
 
-  e.preventDefault()
+    const formData = new FormData(e.target)
 
-  const dados = {
-   empresa:e.target.empresa.value,
-   titulo:e.target.titulo.value,
-   descricao:e.target.descricao.value,
-   salario:e.target.salario.value,
-   status:"aberta"
+    const dados = {
+      cnpjEmpresa: formData.get("cnpjEmpresa"),
+      titulo: formData.get("titulo"),
+      descricao: formData.get("descricao"),
+      requisitos: formData.get("requisitos"),
+      areaAtuacao: formData.get("areaAtuacao"),
+      salario: formData.get("salario"),
+      localizacao: formData.get("localizacao"),
+      cargaHoraria: formData.get("cargaHoraria"),
+      numeroVagas: formData.get("numeroVagas"),
+      contato: formData.get("contato"),
+      dataLimite: formData.get("dataLimite")
+    }
+
+    await fetch("/api/vagas", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    })
+
+    router.push("/vagas")
   }
 
- await fetch("/api/vagas",{
- method:"POST",
- headers:{
-  "Content-Type":"application/json"
- },
- body:JSON.stringify(dados)
-})
-
-  router.push("/vagas")
- }
-
- return(
-    <div className={styles.vaga-container}>
-      <h2 className={styles.vaga-title}>Publique sua vaga</h2>
-      <p className={styles.vaga-subtitle}>
-        Encontre os candidatos certos para sua empresa de forma rápida e transparente
+  return (
+    <div className={styles.vagaContainer}>
+      <h2 className={styles.vagaTitulo}>Publique sua vaga</h2>
+      <p className={styles.vagaSubtitulo}>
+        Encontre os candidatos certos para sua empresa
       </p>
 
-      {/* Chama handlePublish */}
-      <form className={styles.vaga-form} onSubmit={enviar}>
-        {/* TÍTULO */}
-        <div className={styles.input-group_full}>
-          <label>Título da vaga</label>
-          <div className={styles.input-box}>
-            <FiBriefcase className={styles.icon} />
-            <input
-              type="text"
-              name="titulo"
-              placeholder="Ex: Desenvolvedor Front-end"
-            />
+      <form className={styles.vagaFormulario} onSubmit={enviar}>
+        {/* CNPJ */}
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiBriefcase className={styles.labelIcon} />
+            <label>CNPJ</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="number" name="cnpjEmpresa" placeholder="14111222000125" />
           </div>
         </div>
 
+        {/* TÍTULO */}
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiBriefcase className={styles.labelIcon} />
+            <label>Título da vaga</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="titulo" placeholder="Ex: Desenvolvedor Front-end" />
+          </div>
+        </div>
+
+        {/* EMPRESA */}
+        {/* <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiBriefcase className={styles.labelIcon} />
+            <label>Empresa</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="empresa" placeholder="Nome da empresa" />
+          </div>
+        </div> */}
+
         {/* DESCRIÇÃO */}
-        <div className={styles.input-group}>
-          <label>Descrição detalhada</label>
-          <div className={styles.input-box_textarea-box}>
-            <FiFileText className={styles.icon_top-icon} />
-            <textarea
-              name="descricao"
-              rows="5"
-              placeholder="Descreva a vaga..."
-            ></textarea>
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiFileText className={styles.labelIcon} />
+            <label>Descrição detalhada</label>
+          </div>
+          <div className={styles.textareaBox}>
+            <textarea name="descricao" rows="5" placeholder="Descreva a vaga..."></textarea>
           </div>
         </div>
 
         {/* REQUISITOS */}
-        <div className={styles.input-group}>
-          <label>Requisitos</label>
-          <div className={styles.input-box_textarea-box}>
-            <FiFileText className={styles.icon_top-icon} />
-            <textarea
-              name="requisitos"
-              rows="5"
-              placeholder="Liste os requisitos..."
-            ></textarea>
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiFileText className={styles.labelIcon} />
+            <label>Requisitos</label>
+          </div>
+          <div className={styles.textareaBox}>
+            <textarea name="requisitos" rows="5" placeholder="Liste os requisitos..."></textarea>
           </div>
         </div>
 
         {/* ÁREA */}
-        <div className={styles.input-group}>
-          <label>Área de atuação</label>
-          <div className={styles.input-box}>
-            <FiBriefcase className={styles.icon} />
-            <input
-              type="text"
-              name="areaAtuacao"
-              placeholder="Ex: Tecnologia"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiBriefcase className={styles.labelIcon} />
+            <label>Área de atuação</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="areaAtuacao" placeholder="Ex: Tecnologia" />
           </div>
         </div>
 
         {/* SALÁRIO */}
-        <div className={styles.input-group}>
-          <label>Salário inicial</label>
-          <div className={styles.input-box}>
-            <FaRegMoneyBillAlt className={styles.icon} />
-            <input
-              type="number"
-              name="salario"
-              placeholder="Ex: 2500"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FaRegMoneyBillAlt className={styles.labelIcon} />
+            <label>Salário inicial</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="number" name="salario" placeholder="Ex: 2500" />
           </div>
         </div>
 
         {/* LOCALIZAÇÃO */}
-        <div className={styles.input-group}>
-          <label>Localização</label>
-          <div className={styles.input-box}>
-            <FiMapPin className={styles.icon} />
-            <input
-              type="text"
-              name="localizacao"
-              placeholder="Cidade / Estado"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiMapPin className={styles.labelIcon} />
+            <label>Localização</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="localizacao" placeholder="Cidade / Estado" />
           </div>
         </div>
 
         {/* CARGA HORÁRIA */}
-        <div className={styles.input-group}>
-          <label>Carga horária</label>
-          <div className={styles.input-box}>
-            <FiClock className={styles.icon} />
-            <input
-              type="text"
-              name="cargaHoraria"
-              placeholder="Ex: 40h semanais"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiClock className={styles.labelIcon} />
+            <label>Carga horária</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="cargaHoraria" placeholder="Ex: 40h semanais" />
           </div>
         </div>
 
         {/* Nº VAGAS */}
-        <div className={styles.input-group}>
-          <label>Nº de vagas</label>
-          <div className={styles.input-box}>
-            <FiUsers className={styles.icon} />
-            <input
-              type="number"
-              name="numeroVagas"
-              placeholder="Ex: 3"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiUsers className={styles.labelIcon} />
+            <label>Nº de vagas</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="number" name="numeroVagas" placeholder="Ex: 3" />
           </div>
         </div>
 
         {/* CONTATO */}
-        <div className={styles.input-group}>
-          <label>Contato</label>
-          <div className={styles.input-box}>
-            <FiPhone className={styles.icon} />
-            <input
-              type="text"
-              name="contato"
-              placeholder="Email ou telefone"
-            />
+        <div className={styles.inputGroup}>
+          <div className={styles.labelRow}>
+            <FiPhone className={styles.labelIcon} />
+            <label>Contato</label>
+          </div>
+          <div className={styles.inputBox}>
+            <input type="text" name="contato" placeholder="Email ou telefone" />
           </div>
         </div>
 
         {/* DATA */}
-        <div className={styles.input-group_full}>
-          <label>Data limite</label>
-          <input
-            type="date"
-            name="dataLimite"
-            className={styles.date-input}/>
+        <div className={styles.inputGroupFull}>
+          <div className={styles.labelRow}>
+            <FiClock className={styles.labelIcon} />
+            <label>Data limite</label>
+          </div>
+          <input type="date" name="dataLimite" className={styles.dateInput} />
         </div>
 
         {/* BOTÕES */}
-        <div className={styles.buttons-row_full}>
-          {/* Chama handleDraft */}
-          <button
-            type="button"
-            className={styles.btn_draft}            
-          >
+        <div className={styles.buttonsRowFull}>
+          <button type="button" className={styles.btnDraft}>
             Salvar como rascunho
           </button>
 
-          {/* Chama o onSubmit */}
-          <button type="submit" className={styles.btn_publish}>
+          <button type="submit" className={styles.btnPublish}>
             Publicar vaga
           </button>
         </div>
+
       </form>
     </div>
-  );
- 
+  )
 }

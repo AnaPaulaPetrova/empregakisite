@@ -35,8 +35,8 @@ export default async function VagaDetalhe({ params }) {
         </div>
 
         <div className={styles.botoes}>
-            <button>Localização</button>
-            <button>Inscreva-se</button>
+            <button className={styles.localizacao}>Localização</button>
+            <button className={styles.inscreva}>Inscreva-se</button>
         </div>
     </div>
     );

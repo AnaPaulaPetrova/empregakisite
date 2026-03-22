@@ -1,7 +1,9 @@
 "use client";
 
+
 import { useState } from "react";
-import "./empresasCard.css";
+import Link from "next/link";
+import style from"./empresasCard.module.css";
 
 export default function EmpresasClient({ empresas }) {
   const [busca, setBusca] = useState("");
@@ -10,52 +12,39 @@ export default function EmpresasClient({ empresas }) {
     empresa.nome_da_empresa.toLowerCase().includes(busca.toLowerCase())
   );
   return (
-    <div className="container-all">
-      <div className="title">
+    <section className={style.containerAll}>
+      <div className={style.titulo}>
         <h1>Empresas Cadastradas</h1>
 
         <input
           type="text"
-          className="buscar-empresas"
+          className={style.buscarEmpresas}
           placeholder="Buscar empresa..."
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
         />
       </div>
-      <div className="empresas-list">
+
+      <div className={style.empresasList}>
         {empresasFiltradas.length === 0 ? (
           <p>Nenhuma empresa encontrada</p>
         ) : (
-          empresasFiltradas.map((empresa) => (
-            // <div className="card-empresas" key={empresa.cnpj}>
-            //   <div className="card-header">
-            //     <h3>{empresa.nome_da_empresa}</h3>
-            //   </div>
-            //   <div className="card-body">
-            //     <span className="info">{empresa.contato}</span>
-            //     <span className="info">{empresa.endereco}</span>
-            //   </div>
-            // </div>
+         empresasFiltradas.map((empresa) => (
             <Link
-        key={empresas.cnpj}
-        href={`/empresas/${empresas.cnpj}`}
-        className="cardVaga"
-      >
-
-        <h3>{empresa.titulo}</h3>
-        <h4>{empresa.contato}</h4>
-
-        <div className="infoVaga">
-          <span>📍 {empresa.localizacao}</span>
-          <span>R$ {empresa.salario}</span>
-        </div>
-
-        <p>{vaga.descricao}</p>
-      </Link>
-
-          ))
+              key={empresa.cnpj}
+              href={`/empresas/${empresa.cnpj}`}
+              className={style.cardEmpresas}
+            >
+              <div className={style.cardInfo}>
+                <h3>{empresa.nome_da_empresa}</h3>
+                <p> 📞{empresa.contato}</p>
+                <p>📍{empresa.endereco}</p>
+                <p>📝{empresa.sobre_a_empresa}</p>
+              </div>
+            </Link>
+         ))
         )}
       </div>
-    </div>
+    </section>
   );
 }

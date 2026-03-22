@@ -34,8 +34,8 @@
 .logo {
     font-size: 26px;
     font-weight: bold;
-    color: #0F3A5F;
-    border-bottom: 3px solid #0F3A5F;
+    color: var(--cor-principal);
+    border-bottom: 3px solid var(--cor-principal);
     display: inline-block;
 }
 .logo a {
@@ -78,7 +78,7 @@
 }
 
 .button:hover {
-    background-color: #279889;
+    background-color: var(--cor-botao-segundaria);
     transform: translateY(-2px);
 }
 

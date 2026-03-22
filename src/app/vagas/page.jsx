@@ -1,7 +1,5 @@
 import database from "@/database/database";
-import "./vagaCard.css";
 import React from 'react'
-import Link from "next/link"
 import BuscarVagas from"./BuscarVagas"
 // export default async function vagasPage() {
 //  const sql = "select * from vagasdisponiveis";
