@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 
 
 export async function GET() {
@@ -19,22 +19,8 @@ export async function GET() {
        
         const {cnpjEmpresa, titulo, descricao, requisitos, areaAtuacao, salario, localizacao, cargaHoraria, numeroVagas, contato, dataLimite} = dados;
         
-             console.log("Dados recebido", dados);
-             console.log({
-                cnpjEmpresa,
-                titulo,
-                descricao,
-                requisitos,
-                areaAtuacao,
-                salario,
-                localizacao,
-                cargaHoraria,
-                numeroVagas,
-                contato,
-                dataLimite
-                });
-            await database.query(
-            `INSERT INTO vagasdisponiveis (cnpj_empresa, titulo, descricao, requisitos, areaatuacao, salario, localizacao, cargahoraria, numerovagas, contato, dataLimite) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 )`,
+        await database.query(
+            `INSERT INTO vagasdisponiveis (cnpj_empresa, titulo, descricao, requisitos, areaatuacao, salario, localizacao, cargahoraria, numerovagas, contato, dataLimite) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11 ) RETURNING *`,
             [cnpjEmpresa, titulo, descricao, requisitos, areaAtuacao,salario, localizacao, cargaHoraria, numeroVagas, contato, dataLimite]
         );
 

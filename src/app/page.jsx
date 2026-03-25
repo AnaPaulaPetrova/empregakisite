@@ -1,6 +1,5 @@
 import Beneficios from "@/components/Beneficios/Beneficios";
 import styles from "./page.module.css";
-// import VagasCard from "@/components/VagasCard/VagasCard";
 import React from 'react'
 import VagasCard from "@/components/VagasCard/VagasCard";
 import Image from "next/image";

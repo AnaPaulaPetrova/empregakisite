@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 import styles from "./vagaDetalhe.module.css"
 
 export default async function VagaDetalhe({ params }) {

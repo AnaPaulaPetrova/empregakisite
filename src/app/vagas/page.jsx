@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 import React from 'react'
 import BuscarVagas from"./BuscarVagas"
 // export default async function vagasPage() {

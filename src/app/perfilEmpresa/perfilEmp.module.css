@@ -35,13 +35,13 @@
 }
 
 .info{
-    color:#555;
+    color:var(--cor-explicacao);
     margin:5px 0;
 }
 
 .btnVaga{
     margin-top:10px;
-    background:#2f9e8f;
+    background: var(--cor-botao-secundario);
     border:none;
     color:white;
     padding:10px 20px;
@@ -50,7 +50,7 @@
 }
 
 .btnVaga:hover{
-    background:#23867a;
+    background:#1f776d;
 }
 
 .empresaDescricao{
@@ -60,11 +60,11 @@
 .empresaDescricao h2{
     margin-top:25px;
     margin-bottom:10px;
-    color:#1f3c5a;
+    color:var(--cor-principal);
 }
 
 .empresaDescricao p{
-    color:#444;
+    color:var(--cor-explicacao);
     line-height:1.6;
 }
 
@@ -74,7 +74,7 @@
 
 .vagas h2{
     margin-bottom:15px;
-    color:#1f3c5a;
+    color: var(--cor-secundaria);
 }
 
 .vagasGrid{
@@ -97,5 +97,5 @@
 
 .vagaCard p{
     font-size:14px;
-    color:#666;
+    color: var(--cor-explicacao);
 }

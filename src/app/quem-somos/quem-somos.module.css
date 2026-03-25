@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 60px 20px;
   font-family: "Segoe UI", sans-serif;
-  color: #1e293b;
+  color: var(--cor-principal);
 }
 
 /* TÍTULO PRINCIPAL */
@@ -12,14 +12,14 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
-  color: #2563eb;
+  color: var(--cor-principal);
 }
 
 /* TEXTO INTRO */
 .quemContainer > p {
   text-align: center;
   font-size: 1.1rem;
-  color: #475569;
+  color: var(--cor-texto);
   margin-bottom: 50px;
   line-height: 1.6;
 }
@@ -43,12 +43,12 @@
 .quemContainer h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #0f172a;
+  color: var(--cor-secundaria);
 }
 
 /* PARÁGRAFOS */
 .quemContainer section p {
-  color: #64748b;
+  color: var(--cor-texto);
   line-height: 1.6;
 }
 
@@ -60,13 +60,13 @@
 
 .quemContainer li {
   margin-bottom: 8px;
-  color: #475569;
+  color: var(--cor-texto);
   position: relative;
 }
 
 /* BOLINHA CUSTOMIZADA */
 .quemContainer li::marker {
-  color: #2563eb;
+  color: var(--cor-principal);
 }
 
 /* RESPONSIVO */

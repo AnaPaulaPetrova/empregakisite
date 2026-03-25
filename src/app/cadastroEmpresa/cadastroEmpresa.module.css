@@ -1,28 +1,28 @@
-.cadastroCan-container {
+.cadastroEmpContainer{
     width: 450px;
     margin: 40px auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* Titulos */
-.cadastroCan-title {
+.cadastroEmpTitulo {
     font-size: 26px;
     font-weight: bold;
-    color: #0d3b66;
+    color: var(--cor-principal);
 }
-.cadastroCan-subtitle {
+.cadastroEmpSubtitulo {
     margin-top: 6px;
     margin-bottom: 20px;
-    color: #5f6c7b;
+    color: var(--cor-explicacao);
     font-size: 14px;
 }
 /* formulario */
-.cadastroCan-form {
+.cadastroEmpForm {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: left;
 }
-.cadastro-group {
+.cadastroGrupo {
     width: 360px;
     display: flex;
     justify-content: center;
@@ -30,28 +30,28 @@
     gap: 25px;
     margin-bottom: 20px;
 }
-.cadastro-item {
+.cadastroItem {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 6px;
 }
-.cadastro-group input[type="radio"] {
+.cadastroGroup input[type="radio"] {
     width: 50px;
     margin-right: 5px;
     cursor: pointer;
 }
 
-.cadastro-group label {
+.cadastroGroup label {
     cursor: pointer;
     font-weight: 500;
 }
-label {
+.label {
     margin-bottom: 4px;
     font-size: 14px;
-    color: #0d3b66;
+    color: var(--cor-secundaria);
 }
-input {
+.input {
     width: 300px;
     margin-bottom: 16px;
     padding: 10px;
@@ -59,44 +59,36 @@ input {
     border: 1px solid #d1d5db;
     font-size: 14px;
 }
-/* erro */
-.cadastroCan-error {
-    color: red;
-    margin-bottom: 10px;
-    font-size: 13px;
-}
 
 /* esqueci a senha */
-.cadastroCan-forgot {
+.cadastroEmpForgot {
     display: block;
     margin: 10px 0;
     font-size: 14px;
-    color: #1e6091;
+    color: var(--cor-secundaria);
     text-decoration: none;
 }
-.cadastroCan-forgot:hover {
+.cadastroEmpForgot:hover {
     text-decoration: underline;
 }
 /* separador */
-.cadastroCan-divider {
-    width: 300px;
+.cadastroEmpDivider {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    color: #6b7280;
+    gap: 8px;
+    margin: 16px 0;
+    color: var(--cor-explicacao);
     font-size: 14px;
-    margin: auto;
-    padding-bottom: 15px;
 }
-.cadastroCan-divider span {
+.cadastroEmpDivider span {
     flex: 1;
     height: 1px;
     background: #ccc;
 }
 /* Botao google*/
-.google-button {
-    width: 300px;
+.googleButton {
+    width: 350px;
     padding: 10px;
     border: 1px solid #d1d5db;
     background-color: white;
@@ -107,15 +99,15 @@ input {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: #0d3b66;
+    color: var(--cor-secundaria);
     font-weight: bold;
     margin: auto;
 }
-.enter-button {
-    width: 300px;
+.enterButton {
+    width: 350px;
     padding: 10px;
     border: 1px solid #d1d5db;
-    background-color: #36A99A;
+    background-color: var(--cor-botao-secundario);
     border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
@@ -127,9 +119,9 @@ input {
     font-weight: bold;
     margin: auto;
 }
-.google-button img {
+.googleButton img {
     width: 18px;
 }
-.google-button:hover {
+.googleButton:hover {
     background-color: #f8f8f8;
 }

@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 
 export async function PUT(req, {params}) {
     const dados = await req.json()

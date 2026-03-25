@@ -1,101 +1,83 @@
 import React from 'react'
-import "./cadastroEmpresa.css"
+import styles from "./cadastroEmpresa.module.css"
 export default function cadastroEmp() {
 
 
 
   return (
-     <div className="cadastroEmp-container">
-        <h2 className="cadastroEmp-title">Crie sua conta</h2>
-        <p className="cadastroEmp-subtitle">Preencha seus dados para começar a usar o Empregaki</p>
+     <div className={styles.cadastroEmpContainer}>
+        <h2 className={styles.cadastroEmpTitulo}>Crie sua conta</h2>
+        <p className={styles.cadastroEmpSubtitulo}>Preencha seus dados para começar a usar o Empregaki</p>
 
-        {/* {error && <div className="error">{error}</div>} */}
-
-        <form  className="cadastroEmp-form">
-            <div className="cadastro-group">
-                <div className="cadastro-item">
+        <form  className={styles.cadastroEmpForm}>
+            <div className={styles.cadastroGrupo}>
+                <div className={styles.cadastroItem}>
                     <input
-                        className="input"
+                        className={styles.input}
                         type="radio"
                         id="souEmpresa"
                         name="cadastro"
-                        //value={souEmpresa}
-                        //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label htmlFor="souEmpresa">Sou Empresa</label>
+                    <label className={styles.label} htmlFor="souEmpresa">Sou Empresa</label>
                     <input
-                        className="input"
+                        className={styles.input}
                         type="radio"
                         id="souCandidato"
                         name="cadastro"
-                        //value={souCandidato}
-                        //onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <label htmlFor="souCandidato">Sou Candidato</label>
+                    <label className={styles.label} htmlFor="souCandidato">Sou Candidato</label>
                 </div>
             </div>
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="text"
-                //value={nome}
-                //onChange={(e) => setEmail(e.target.value)}
                 placeholder="Nome completo"
                 required
             />
              <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="text"
-                //value={nome}
-                //onChange={(e) => setEmail(e.target.value)}
                 placeholder="CNPJ"
                 required
             />
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="email"
-                //value={email}
-                //onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail"
                 required
             />
 
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="password"
-                //value={password}
-                //onChange={(e) => setPassword(e.target.value)}
                 placeholder="Sua senha"
                 required
             />
 
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="password"
-                //value={confirmSenha}
-                //onChange={(e) => setPassword(e.target.value)}
                 placeholder="Confirme sua senha"
                 required
             />
 
-            {/* <p className="cadastroEmp-subtitle">Tipo de conta</p> */}
-
-            <button className="enter-button" type="submit">Entrar</button>
+            <button className={styles.enterButton} type="submit">Entrar</button>
         </form>
 
-          <a className="cadastroEmp-forgot" href="">Esqueceu sua senha?</a>
+          <a className={styles.cadastroEmpForgot} href="">Esqueceu sua senha?</a>
           
-          <div className="cadastroEmp-divider">
+          <div className={styles.cadastroEmpDivider}>
             <span></span> ou <span></span>
           </div>
 
-           <button className="google-button" type="submit">
+           <button className={styles.googleButton} type="submit">
             <img src="" alt=""></img>Continuar com o Google
            </button>
         </div>

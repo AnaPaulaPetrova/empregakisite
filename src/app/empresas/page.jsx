@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 import React from 'react'
 import EmpresasClient from "./EmpresasClient";
 

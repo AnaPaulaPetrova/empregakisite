@@ -1,5 +1,5 @@
 "use client";
-import "./login.css"
+import styles from"./login.module.css"
 import React from 'react';
 import {useState} from "react";
 import { useRouter } from 'next/navigation';
@@ -27,17 +27,15 @@ export default function Login() {
     }
 
   return (
-    <div className="login-container">
-        <h2 className="login-title">Acesse sua conta</h2>
-        <p className="login-subtitle">Entre com seus dados para continuar</p>
+    <div className={styles.loginContainer}>
+        <h2 className={styles.loginTitulo}>Acesse sua conta</h2>
+        <p className={styles.loginSubtitulo}>Entre com seus dados para continuar</p>
 
-        {error && <div className="error">{error}</div>}
-
-        <form onSubmit={formularioEnviado} className="login-form">
+        <form onSubmit={formularioEnviado} className={styles.loginForm}>
             
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -47,7 +45,7 @@ export default function Login() {
 
             <label></label>
             <input
-                className="input"
+                className={styles.input}
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -55,16 +53,16 @@ export default function Login() {
                 required
             />
 
-            <button className="enter-button" type="submit">Entrar</button>
+            <button className={styles.enterButton} type="submit">Entrar</button>
         </form>
 
-          <a className="login-forgot" href="">Esqueceu sua senha?</a>
+          <a className={styles.loginForgot} href="">Esqueceu sua senha?</a>
           
-          <div className="login-divider">
+          <div className={styles.loginDivider}>
             <span></span> ou <span></span>
           </div>
 
-           <button className="google-button" type="submit">
+           <button className={styles.googleButton} type="submit">
             <img src="" alt=""></img>Continuar com o Google
            </button>
         </div>

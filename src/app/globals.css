@@ -3,10 +3,11 @@
   --foreground: #171717;
 
   --cor-principal: #0F3A5F;
-  --cor-segundaria: #16425B;
+  --cor-secundaria: #16425B;
   --cor-texto: #1E80A8;
+  --cor-explicacao: #5f6c7b;
   --cor-botao: #224F79;
-  --cor-botao-segundario: #36A99A;
+  --cor-botao-secundario: #36A99A;
 }
 
 @media (prefers-color-scheme: dark) {

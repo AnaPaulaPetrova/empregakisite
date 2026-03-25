@@ -1,75 +1,45 @@
-.cadastroEmp-container{
-    width: 450px;
+
+.loginContainer {
+    width: 300px;
     margin: 40px auto;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 /* Titulos */
-.cadastroEmp-title {
+.loginTitulo {
     font-size: 26px;
     font-weight: bold;
-    color: #0d3b66;
+    color: var(--cor-principal);
 }
-.cadastroEmp-subtitle {
+.loginSubtitulo {
     margin-top: 6px;
     margin-bottom: 20px;
-    color: #5f6c7b;
+    color: var(--cor-explicacao);
     font-size: 14px;
 }
 /* formulario */
-.CadastroEmp-form {
+.loginForm {
     display: flex;
     flex-direction: column;
     text-align: left;
 }
-.cadastro-group {
-    width: 360px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 20px;
-}
-.cadastro-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-}
-.cadastro-group input[type="radio"] {
-    width: 50px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-.cadastro-group label {
-    cursor: pointer;
-    font-weight: 500;
-}
-label {
+.label {
     margin-bottom: 4px;
     font-size: 14px;
-    color: #0d3b66;
+    color: var(--cor-secundario);
 }
-input {
-    width: 300px;
+.input {
     margin-bottom: 16px;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #d1d5db;
     font-size: 14px;
 }
-/* erro */
-.CadastroEmp-error {
-    color: red;
-    margin-bottom: 10px;
-    font-size: 13px;
-}
 /* Botoes */
-/* .CadastroEmp-button {
+.loginButton {
     width: 100px;
     padding: 10px;
-    background-color: #2e9d8f;
+    background-color: var(--cor-botao-secundario);
     color: white;
     border: none;
     border-radius: 6px;
@@ -77,39 +47,39 @@ input {
     font-size: 16px;
     margin-bottom: 10px;
 }
-.CadastroEmp-button:hover {
-    background-color: #23867a;
-} */
+.loginButton:hover {
+    background-color: var(--cor-botao-secundario);
+}
 
 /* esqueci a senha */
-.cadastroEmp-forgot {
+.loginForgot {
     display: block;
     margin: 10px 0;
     font-size: 14px;
-    color: #1e6091;
+    color: var(--cor-secundario);
     text-decoration: none;
 }
-.cadastroEmp-forgot:hover {
+.loginForgot:hover {
     text-decoration: underline;
 }
 /* separador */
-.cadastroEmp-divider {
+.loginDivider {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     margin: 16px 0;
-    color: #6b7280;
+    color: var(--cor-explicacao);
     font-size: 14px;
 }
-.cadastroEmp-divider span {
+.loginDivider span {
     flex: 1;
     height: 1px;
     background: #ccc;
 }
 /* Botao google*/
-.google-button {
-    width: 350px;
+.googleButton {
+    width: 100%;
     padding: 10px;
     border: 1px solid #d1d5db;
     background-color: white;
@@ -120,15 +90,14 @@ input {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: #0d3b66;
+    color: var(--cor-botao);
     font-weight: bold;
-    margin: auto;
 }
-.enter-button {
-    width: 350px;
+.enterButton {
+    width: 100%;
     padding: 10px;
     border: 1px solid #d1d5db;
-    background-color: #36A99A;
+    background-color: var(--cor-botao-secundario);
     border-radius: 6px;
     cursor: pointer;
     font-size: 15px;
@@ -136,13 +105,12 @@ input {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: #f5f3f3;
+    color: #fbfafa;
     font-weight: bold;
-    margin: auto;
 }
-.google-button img {
+.googleButton img {
     width: 18px;
 }
-.google-button:hover {
+.googleButton:hover {
     background-color: #f8f8f8;
 }

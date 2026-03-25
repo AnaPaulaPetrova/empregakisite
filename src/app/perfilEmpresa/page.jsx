@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 import styles from "./perfilEmp.module.css";
 import Link from "next/link";
 

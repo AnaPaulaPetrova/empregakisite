@@ -1,4 +1,4 @@
-import database from "@/database/database";
+import {database} from "@/database/database";
 import "./vagasCard.css";
 
 export default async function VagasCard() {
