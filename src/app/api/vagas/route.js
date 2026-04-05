@@ -3,7 +3,7 @@ import {database} from "@/database/database";
 
 export async function GET() {
 
-    const sql = "SELECT * FROM vagasdisponiveis ORDER BY created_at DESC";
+    const sql = `SELECT * FROM vagasdisponiveis ORDER BY created_at DESC`;
 
     const responseDB = await database.query(sql);
  

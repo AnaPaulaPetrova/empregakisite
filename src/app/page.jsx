@@ -6,10 +6,19 @@ import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const resposta = await fetch("http://localhost:3000/api/vagas", {
+  cache: "no-store",
+});
+
+if (!resposta.ok) {
+  throw new Error("Erro ao buscar vagas");
+}
+
+  const vagas = await resposta.json();
+
   return (
     <>
-    
       {/* <h1 className={styles.logo}>EMPREGAKI</h1>
       <p className={styles.slogan}>
         Conectando pessoas a oportunidades
@@ -22,54 +31,49 @@ export default function Home() {
            <p>
              O lugar onde você encontra oportunidades que se encaixam no seu perfil.
            </p>
-           <Link href={"./vagas"}><button className={styles.btnVerVagas}>Ver vagas</button></Link>
+
+           <Link href={"./vagas"}>
+            <button className={styles.btnVerVagas}>Ver vagas</button>
+            </Link>
+
          </div>
    
          <div className={styles.logoImage}>
           <Image
-          src="/banner.png"
-          alt="Banner principal"
-          fill
-          priority
-         
-        />
+            src="/banner.png"
+            alt="Banner principal"
+            fill
+            priority
+          />
            {/* Aqui você pode colocar uma imagem depois */}
-         </div>
+        </div>
+
        </section>
    
        {/* Cards das principais vagas */}
-       <section className={styles.vagasSection}>
-         <div className={styles.vagasHeader}>
-           <h2>Vagas em destaque</h2>
-           <Link href={"./vagas"}><button className={styles.bntVerTodas}>Ver todas</button></Link>
-         </div>
+      <section className={styles.vagasSection}>
+        <div className={styles.vagasHeader}>
+          <h2>Vagas em destaque</h2> 
+          <Link href={"./vagas"}>
+            <button className={styles.bntVerTodas}>Ver todas</button>
+          </Link>
+        </div>
    
-           <div className={styles.vagasCards}>
-            <VagasCard 
-                   titulo="Operador de Máquinas"
-                   empresa="Horaca Editora"
-             />
-   
-            <VagasCard
-                   titulo="Programador"
-                   empresa="Coneta Sequer"
-             />
-
+          <div className={styles.vagasCards}>
+            {vagas.slice(0, 4).map((vaga) => (
               <VagasCard
-                   title="Desenvolvedor Web"
-                   empresa="Conncta Web"
-             />   
+                key={vaga.id}
+                id={vaga.id}
+                titulo={vaga.titulo}
+                localizacao={vaga.localizacao}
+                descricao={vaga.descricao}
+              />
+            ))}     
+          </div>
+      </section>
 
-              <VagasCard
-                   title="Vendedor"
-                   empresa="Mercado Santo"
-             />      
-           </div>
-
-       </section>
-       <Beneficios />
-       <Footer />
-         
+      <Beneficios />
+      <Footer />    
     </>
   );
 }

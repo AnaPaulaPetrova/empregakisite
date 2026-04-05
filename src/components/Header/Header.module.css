@@ -59,12 +59,12 @@
 }
 .menu a {
     text-decoration: none;
-    color: #0F3A5F;
+    color: var(--cor-principal);
     font-weight: 600;
     transition: 0.2s;
 }
 .menu a:hover {
-    color: #1E80A8;
+    color: var(--cor-texto);
 }
 .button {
     background-color: #314b86;
@@ -78,7 +78,7 @@
 }
 
 .button:hover {
-    background-color: var(--cor-botao-segundaria);
+    background-color: var(--cor-botao-secundario);
     transform: translateY(-2px);
 }
 

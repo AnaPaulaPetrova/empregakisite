@@ -1,4 +1,4 @@
-.vaga-card {
+.vagaCard {
     width: 300px;
     min-height: 180px;
     display: flex;
@@ -6,39 +6,32 @@
     justify-content: space-between;
     background-color: #ffffff;
     border-radius: 12px;
-    padding: 20px;
+    padding: 20px 20px;
+
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
 /* Efeito ao passar o mouse */
-.vaga-card:hover {
+.vagaCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.vaga-card h3 {
+.vagaCard h3 {
   font-size: 16px;
   font-weight: 600;
-  color: #1f3b57;
-  margin-bottom: 15px;
+  color: var(--cor-secundaria);
+  margin-bottom: 5px;
   min-height: 48px; /* mantém altura padrão */
 }
 
-.vaga-img {
-  width: 100%;
-  height: 70px;
-  background-color: #eeeeee;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-.vaga-card p {
+.vagaCard p {
   font-size: 14px;
-  color: #5c6b7a;
+  color: var(--cor-explicacao);
   font-weight: 500;
 }
-.vaga-card {
+.vagaCard {
   opacity: 0;
   animation: fadeIn 0.5s ease forwards;
 }

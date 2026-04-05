@@ -51,7 +51,7 @@
 
 .labelIcon {
   font-size: 18px;
-  color: var(--cor-explicacao);
+  color: #6b6b6b;
   display: flex;
   align-items: center;
 }
@@ -119,8 +119,8 @@
 
 .buttonsRowFull {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+  justify-content: flex-end; /* ou center */
+  margin-top: 20px;
   grid-column: span 2;
 }
 
@@ -130,20 +130,20 @@
   font-size: 15px;
   border: none;
   cursor: pointer;
-  background: var(--cor-explicacao);
+  background: #6b6b6b;
   color: white;
 }
 
-.btnPublish {
+.btnSalvar {
   padding: 12px 25px;
   border-radius: 10px;
   font-size: 15px;
   border: none;
   cursor: pointer;
-  background: var(--cor-botao-segundario);
+  background: var(--cor-botao-secundario);
   color: white;
 }
 
-.btnPublish:hover {
-  background: var(--cor-botao-segundario);
+.btnSalvar:hover {
+  background: var(--cor-botao-secundario);
 }

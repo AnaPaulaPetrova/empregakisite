@@ -15,7 +15,7 @@
 }
 
 .vagaSubtitulo {
-  color: #6b6b6b;
+  color: var(--cor-explicacao);
   margin-bottom: 30px;
 }
 

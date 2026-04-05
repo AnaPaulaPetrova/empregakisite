@@ -1,19 +1,17 @@
-import {database} from "@/database/database";
-import "./vagasCard.css";
+import styles from "./vagasCard.module.css";
+import Link from "next/link";
 
-export default async function VagasCard() {
+export default async function VagasCard({id, titulo, localizacao, descricao}) {
 
-  const sql = "SELECT * FROM vagasdisponiveis ORDER BY created_at DESC";
- const responseDB = await database.query(sql);
-
- const vagas = responseDB.rows;
   return (
    <> 
-    <div className="vaga-card">
-        <h3>{vagas.titulo}</h3>
-        <div className="vaga-img"></div>
-        <p>{vagas.empresa}</p>
+    <Link href={`/vagas/${id}`}>
+      <div className={styles.vagaCard}>
+        <h3>{titulo}</h3>
+        <p>{localizacao}</p>
+        <p>{descricao}</p>
       </div>
+    </Link>
     </>
   );
 }

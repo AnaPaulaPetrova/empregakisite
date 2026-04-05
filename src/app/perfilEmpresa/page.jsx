@@ -5,7 +5,7 @@ import Link from "next/link";
 export default async function PerfilEmpresa({ params}) {
   
    const empresaResponse = await database.query(
-    "SELECT * FROM empresas LIMIT 1"
+    "SELECT * FROM empresas  WHERE cnpj= $1", [params.cnpj]
   );
 
   const empresa = empresaResponse.rows[0];
@@ -41,7 +41,7 @@ export default async function PerfilEmpresa({ params}) {
               📍 {empresa.endereco}
             </p>
 
-            <Link href={"./vagas/criar"}><button className={styles.btnVaga}>
+            <Link href={"/vagas/criar"}><button className={styles.btnVaga}>
               Anunciar Vaga
             </button></Link>
           </div>

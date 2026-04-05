@@ -22,7 +22,7 @@ export async function POST(req) {
     const result = await database.query(
       `INSERT INTO vagasdisponiveis
       (cnpj_empresa, titulo, descricao, requisitos, areaatuacao, salario, localizacao, cargahoraria, numerovagas, contato, datalimite)
-      VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
       RETURNING *`,
       [
         cnpj_empresa,
