@@ -1,0 +1,170 @@
+.cadastroCandContainer {
+    width: 450px;
+    margin: 40px auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Titulos */
+.cadastroCandtitulo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+.cadastroCandSubtitulo {
+    margin-top: 6px;
+    margin-bottom: 20px;
+    color: var(--cor-explicacao);
+    font-size: 14px;
+}
+/* formulario */
+.cadastroCandForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cadastroGroup {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+.cadastroItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.cadastroGrupo input[type="radio"] {
+    width: 50px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cadastroGrupo label {
+    cursor: pointer;
+    font-weight: 500;
+}
+.label {
+    margin-bottom: 4px;
+    font-size: 14px;
+    color:var(--cor-secundaria);
+}
+.input {
+    width: 300px;
+    margin-bottom: 16px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+/* esqueci a senha */
+.cadastroCandForgot {
+    display: block;
+    margin: 10px 0;
+    font-size: 14px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+.cadastroCandForgot:hover {
+    text-decoration: underline;
+}
+/* separador */
+.cadastroCandDivider {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--cor-explicacao);
+    font-size: 14px;
+    margin: auto;
+    padding-bottom: 15px;
+}
+.cadastroCandDivider span {
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+}
+/* Botao google*/
+.googleButton {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--cor-botao);
+    font-weight: bold;
+    margin: auto;
+}
+.enterButton {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    background-color: var(--cor-botao-secundario);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #f5f3f3;
+    font-weight: bold;
+    margin: auto;
+}
+.google-button img {
+    width: 18px;
+}
+.google-button:hover {
+    background-color: #f8f8f8;
+}
+/* ADICIONE ESSAS CLASSES novas */
+.error {
+    width: 300px;
+    padding: 12px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    border-radius: 8px;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.cadastroRadio {
+    width: 20px !important;  /* Corrige tamanho */
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.cadastroLabel {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--cor-secundaria);
+}
+
+.cadastroGrupo {
+    width: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.cadastroItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}

@@ -2,7 +2,7 @@ import { database } from "@/database/database";
 
 export async function GET(request, { params }) {
 
-    const resolvedParams = await params; // 👈 IMPORTANTE
+    const resolvedParams = await params; 
     const { cnpj } = resolvedParams;
 
     console.log("CNPJ na API:", cnpj);

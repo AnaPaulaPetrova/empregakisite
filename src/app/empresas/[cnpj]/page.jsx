@@ -1,29 +1,39 @@
-import {database} from "@/database/database";
-import styles from "./perfilEmp.module.css";
-import Link from "next/link";
+import Link from "next/link"
+import styles from "./impresaDetalhes.module.css"
 
-export default async function PerfilEmpresa({ params}) {
-  
-   const empresaResponse = await database.query(
-    "SELECT * FROM empresas  WHERE cnpj= $1", [params.cnpj]
-  );
+import React from 'react'
 
-  const empresa = empresaResponse.rows[0];
-
-  if (!empresa) {
-    return <p>Empresa não encontrada</p>;
+export async function buscarEmpresa(cnpj) {
+  try {
+    const resposta = await fetch(`http://localhost:3000/api/empresas/${cnpj}`, {
+        cache: "no-store",
+    });
+    if (!resposta.ok) {
+    return <div>empresa não encontrada</div>;
   }
+  return await resposta.json();    
+  } catch (error) {
+    console.error('Erro ao buscar empresa:', error);
+    return null;
+  }
+}
 
-  const vagasResponse = await database.query(
-    "SELECT * FROM vagasdisponiveis WHERE cnpj_empresa = $1",
-    [empresa.nome_da_empresa]
-  );
+export default async function empresaDetalhes( {params} ) {
+    const { cnpj } = await params;
+    const empresa = await buscarEmpresa(cnpj);
 
-  const vagas = vagasResponse.rows; 
+    if(!empresa) {
+      return (
+        <div className={styles.notFound}>
+          <h1>Empresa não encontrada</h1>
+          <Link href="/empresas" className={styles.voltarLink}> Voltar para Empresas
+          </Link>
+        </div>
+      );
+    }     
 
   return (
     <main className={styles.perfilContainer}>
-
       <section className={styles.perfilCard}>
 
         <div className={styles.perfilTopo}>
@@ -41,10 +51,10 @@ export default async function PerfilEmpresa({ params}) {
               📍 {empresa.endereco}
             </p>
 
-            <Link href={"/vagas/criar"}><button className={styles.btnVaga}>
+            {/* <Link href={"/vagas/criar"}><button className={styles.btnVaga}>
                 Anunciar Vaga
               </button>
-            </Link>
+            </Link> */}
           </div>
 
         </div>
@@ -56,7 +66,7 @@ export default async function PerfilEmpresa({ params}) {
             {empresa.sobre_a_empresa}
           </p>
 
-          <h2>Diferencias</h2>
+          <h2>Diferências</h2>
 
           <p>
             <strong>Missão:</strong> {empresa.missao}
@@ -72,7 +82,7 @@ export default async function PerfilEmpresa({ params}) {
 
         </div>
 
-        <div className={styles.vagas}>
+        {/* <div className={styles.vagas}>
 
           <h2>Vagas disponíveis</h2>
 
@@ -84,7 +94,7 @@ export default async function PerfilEmpresa({ params}) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
       </section>
     </main>

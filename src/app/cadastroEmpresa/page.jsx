@@ -78,7 +78,8 @@ export default function cadastroEmp() {
           </div>
 
            <button className={styles.googleButton} type="submit">
-            <img src="" alt=""></img>Continuar com o Google
+            {/* <img src="" alt=""></img>*/}
+            Continuar com o Google 
            </button>
         </div>
   );

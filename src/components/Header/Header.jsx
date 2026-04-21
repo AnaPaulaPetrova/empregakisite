@@ -15,11 +15,11 @@ export default function Header() {
             <li><Link href={"/vagas"}>Vagas</Link></li>
             <li><Link href={"/empresas"}>Empresas</Link></li>
             <li><Link href={"/quem-somos"}>Quem Somos</Link></li>
-            <li><Link href={"/login"}>Login</Link></li>
+            <li><Link href={"/auth/login"}>Login</Link></li>
           </ul>
         </nav>
-        <Link href={"/cadastroCandidato"}>
-        <button className={styles.button}>Cadastro</button></Link>
+        <Link href={"/auth/registro"}>
+        <button className={styles.button}>Cadastre-se</button></Link>
       </header>
   );
 }

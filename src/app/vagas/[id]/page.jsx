@@ -27,11 +27,13 @@ export default async function VagaDetalhe({ params }) {
     return (
         <>
             <div className={styles.containerCard}>
-                <h2>{vaga.titulo}</h2>
+                <div className={styles.header}>
+                    <h2>{vaga.titulo}</h2>
 
-                <Link href={`/vagas/editar/${vaga.id}`}>
-                    Editar
-                </Link>
+                    <Link href={`/vagas/editar/${vaga.id}`}>
+                        Editar
+                    </Link>
+                </div>
 
                 <div className={styles.infoVaga}>
                     <span><strong>👤Empresa: </strong>{empresa.nome_da_empresa}</span>
@@ -39,7 +41,6 @@ export default async function VagaDetalhe({ params }) {
                     <span><strong>👥Vagas: </strong>{vaga.numerovagas}</span>
                     <span><strong>📞Contato: </strong>{vaga.contato}</span>
                     <span><strong>📍Local: </strong>{vaga.localizacao}</span>
-
                 </div>
 
                 <div className={styles.descricao}>

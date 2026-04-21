@@ -7,12 +7,13 @@ import { FiBriefcase, FiFileText, FiMapPin, FiClock, FiUsers, FiPhone } from "re
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 
 export default function EditarVaga({ vaga }) {
+    
   const[cnpj, setCNPJ] = useState(vaga?.cnpj_empresa)
   const [titulo, setTitulo] = useState(vaga?.titulo || "");
   const [descricao, setDescricao] = useState(vaga?.descricao || "");
   const [requisitos, setRequisitos] = useState(vaga?.requisitos || "");
-  const [salario, setSalario] = useState(vaga?.salario || "");
   const [areaAtuacao, setAreaAtuacao] = useState(vaga?.area_atuacao || "");
+  const [salario, setSalario] = useState(vaga?.salario || "");
   const [localizacao, setLocalizacao] = useState(vaga?.localizacao || "");
   const [cargaHoraria, setCargaHoraria] = useState(vaga?.carga_horaria || "");
   const [numeroVagas, setNumeroVagas] = useState(vaga?.numero_vagas || "");
@@ -33,8 +34,8 @@ export default function EditarVaga({ vaga }) {
           titulo,
           descricao,
           requisitos,
-          salario,
           areaAtuacao,
+          salario,
           localizacao,
           cargaHoraria,
           numeroVagas,
@@ -50,13 +51,14 @@ export default function EditarVaga({ vaga }) {
         alert("Erro ao atualizar");
       }
       router.push(`/vagas/${vaga.id}`)
+      console.log("vagas", vaga);
   }
   
    return (
     <div className={styles.vagaContainer}>
-      <h2 className={styles.vagaTitulo}>Publique sua vaga</h2>
+      <h2 className={styles.vagaTitulo}>Edite sua vaga</h2>
       <p className={styles.vagaSubtitulo}>
-        Encontre os candidatos certos para sua empresa
+        ...
       </p>
 
       <form className={styles.vagaFormulario} onSubmit={vagaUpdate}>
@@ -71,7 +73,8 @@ export default function EditarVaga({ vaga }) {
               type="number" 
               name="cnpjEmpresa"
               value={cnpj} 
-              readOnly
+              onChange={(e) => setCNPJ(e.target.value)}
+            //   readOnly
             />
           </div>
         </div>
@@ -87,7 +90,6 @@ export default function EditarVaga({ vaga }) {
               type="text" 
               name="titulo" 
               value={titulo}
-              placeholder="Ex: Desenvolvedor Front-end"
               onChange={(e) => setTitulo(e.target.value)}
             />
           </div>
@@ -239,9 +241,9 @@ export default function EditarVaga({ vaga }) {
 
         {/* BOTÕES */}
         <div className={styles.buttonsRowFull}>
-          {/* <button type="button" className={styles.btnDraft}>
+          <button type="button" className={styles.btnDraft}>
             Salvar como rascunho
-          </button> */}
+          </button>
 
           <button type="submit" className={styles.btnSalvar}>
             Salvar Vaga

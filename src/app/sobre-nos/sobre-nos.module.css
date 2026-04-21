@@ -17,10 +17,12 @@
   margin-bottom: 30px;
   line-height: 1.6;
   text-align: center;
+  color: var(--cor-secundaria);
 }
 
 .section {
   margin-bottom: 30px;
+  color: var(--cor-secundaria);
 }
 
 .section h2 {

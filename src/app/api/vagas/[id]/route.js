@@ -6,20 +6,19 @@ export async function PUT(req, {params}) {
 
   const dados = await req.json()
 
-  const {titulo, descricao, requisitos, salario, areaAtuacao, localizacao, cargaHoraria, numeroVagas, contato, dataLimite } = dados
+  const {titulo, descricao, requisitos, areaAtuacao, salario,localizacao, cargaHoraria, numeroVagas, contato, dataLimite } = dados
 
   const sql = `
-  UPDATE vagasdisponiveis SET empresa=$1, titulo=$2, descricao=$3, requisitos=$4, salario=$5, areaatuacao=$6, localizacao=$7, cargahoraria=$8, numerovagas=$9, contato=$10, datalimite=$11 WHERE id=$12
+  UPDATE vagasdisponiveis SET titulo=$1, descricao=$2, requisitos=$3, areaatuacao=$4, salario=$5, localizacao=$6, cargahoraria=$7, numerovagas=$8, contato=$9, datalimite=$10 WHERE id=$11
   `;
 
   try {
     await database.query(sql, [
-      dados.empresa,
       dados.titulo,
       dados.descricao,
       dados.requisitos,
-      dados.salario,
       dados.areaAtuacao,
+      dados.salario,
       dados.localizacao,
       dados.cargaHoraria,
       dados.numeroVagas,
