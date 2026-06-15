@@ -1,0 +1,92 @@
+.beneficios {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.beneficios h2 {
+  text-align: center;
+  color: var(--cor-principal);
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.beneficiosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.beneficiosGrid > div {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #e7edf3;
+  transition: .3s;
+}
+
+.beneficiosGrid > div:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 30px rgba(0,0,0,.08);
+}
+
+.beneficiosGrid h3 {
+  color: var(--cor-principal);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.beneficiosGrid p {
+  color: var(--cor-explicacao);
+  line-height: 1.7;
+}
+
+.publicarBox {
+  background: linear-gradient(
+    135deg,
+    var(--cor-principal),
+    var(--cor-botao)
+  ) !important;
+
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.publicarBox h3 {
+  color: white !important;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.publicarBox p {
+  color: rgba(255,255,255,0.9) !important;
+  max-width: 400px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.btnEmpresa {
+  background: white;
+  color: var(--cor-principal);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnEmpresa:hover {
+  /* transform: translateY(-3px); */
+  background: var(--cor-botao-secundario);
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}

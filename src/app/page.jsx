@@ -1,79 +1,148 @@
 import Beneficios from "@/components/Beneficios/Beneficios";
 import styles from "./page.module.css";
-import React from 'react'
+import React from "react";
 import VagasCard from "@/components/VagasCard/VagasCard";
 import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 
 export default async function Home() {
-  const resposta = await fetch("http://localhost:3000/api/vagas", {
-  cache: "no-store",
-});
-
-if (!resposta.ok) {
-  throw new Error("Erro ao buscar vagas");
-}
-
+  const resposta = await fetch(
+    "http://localhost:3000/api/vagas",
+    {
+      cache: "no-store",
+    }
+  );
+  
   const vagas = await resposta.json();
+  const respostaStats = await fetch(
+    "http://localhost:3000/api/dashboard",
+    {
+      cache: "no-store",
+    }
+  );
+  
+  const stats = await respostaStats.json();
 
+  if (!resposta.ok) {
+    throw new Error("Erro ao buscar vagas");
+  }
+  
   return (
     <>
-      {/* <h1 className={styles.logo}>EMPREGAKI</h1>
-      <p className={styles.slogan}>
-        Conectando pessoas a oportunidades
-      </p> */}
-   
-       {/* Banner */}
-       <section className={styles.bannerContainer}>
-         <div className={styles.bannerText}>
-           <h2>Encontre o trabalho certo, sem complicação</h2>
-           <p>
-             O lugar onde você encontra oportunidades que se encaixam no seu perfil.
-           </p>
+      {/* HERO */}
+      <section className={styles.bannerContainer}>
+        <div className={styles.bannerText}>
+          <span className={styles.badge}>
+            Plataforma de Empregos
+          </span>
 
-           <Link href={"./vagas"}>
-            <button className={styles.btnVerVagas}>Ver vagas</button>
+          <h2>
+            Conectando talentos às melhores oportunidades
+          </h2>
+
+          <p>
+            Encontre vagas, descubra empresas e dê o próximo
+            passo na sua carreira com o EmpregAki.
+          </p>
+
+          <div className={styles.heroButtons}>
+            <Link href="/vagas">
+              <button className={styles.btnPrincipal}>
+                Explorar vagas
+              </button>
             </Link>
 
-         </div>
-   
-         <div className={styles.logoImage}>
+            <Link href="/empresas">
+              <button className={styles.btnSecundario}>
+                Ver empresas
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        <div className={styles.logoImage}>
           <Image
             src="/banner.png"
             alt="Banner principal"
             fill
             priority
           />
-           {/* Aqui você pode colocar uma imagem depois */}
+        </div>
+      </section>
+
+      {/* ESTATÍSTICAS */}
+      <section className={styles.stats}>
+        <div className={styles.stat}>
+          <h3>{vagas.length}+</h3>
+          <span>Vagas disponíveis</span>
         </div>
 
-       </section>
-   
-       {/* Cards das principais vagas */}
+        <div className={styles.stat}>
+          <h3>{stats.candidatos}</h3>
+          <span>Candidatos</span>
+        </div>
+
+        <div className={styles.stat}>
+          <h3>{stats.empresas}</h3>
+          <span>Empresas</span>
+        </div>
+      </section>
+
+      {/* VAGAS */}
       <section className={styles.vagasSection}>
         <div className={styles.vagasHeader}>
-          <h2>Vagas em destaque</h2> 
-          <Link href={"./vagas"}>
-            <button className={styles.bntVerTodas}>Ver todas</button>
+          <div>
+            <h2>Vagas em destaque</h2>
+
+            <p>
+              Confira as oportunidades mais recentes.
+            </p>
+          </div>
+
+          <Link href="/vagas">
+            <button className={styles.bntVerTodas}>
+              Ver todas →
+            </button>
           </Link>
         </div>
-   
-          <div className={styles.vagasCards}>
-            {vagas.slice(0, 4).map((vaga) => (
-              <VagasCard
-                key={vaga.id}
-                id={vaga.id}
-                titulo={vaga.titulo}
-                localizacao={vaga.localizacao}
-                descricao={vaga.descricao}
-              />
-            ))}     
-          </div>
+
+        <div className={styles.vagasCards}>
+          {vagas.slice(0, 5).map((vaga) => (
+            <VagasCard
+              key={vaga.id}
+              id={vaga.id}
+              titulo={vaga.titulo}
+              empresaNome={vaga.empresa_nome}
+              localizacao={vaga.localizacao}
+              // descricao={vaga.descricao}
+              salario ={vaga.salario}
+            />
+          ))}
+        </div>
       </section>
 
       <Beneficios />
-      <Footer />    
+
+      {/* CTA FINAL */}
+      <section className={styles.cta}>
+        <h2>
+          Pronto para encontrar sua próxima oportunidade?
+        </h2>
+
+        <p>
+          Explore vagas e conecte-se às empresas que estão
+          procurando talentos como você.
+        </p>
+
+        <Link href="/vagas">
+          <button className={styles.btnPrincipal}>
+            Ver vagas
+          </button>
+        </Link>
+      </section>
+
+      <Footer />
     </>
   );
 }

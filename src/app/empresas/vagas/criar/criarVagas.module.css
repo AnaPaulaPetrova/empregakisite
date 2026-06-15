@@ -1,0 +1,136 @@
+.vagaContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.vagaTitulo {
+  color: var(--cor-principal);
+  margin-bottom: 8px;
+}
+
+.vagaSubtitulo {
+  color: var(--cor-explicacao);
+  margin-bottom: 30px;
+}
+
+.vagaFormulario {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  );
+
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupFull {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--cor-secundaria);
+  font-weight: 600;
+}
+
+.labelIcon {
+  color: var(--cor-texto);
+  font-size: 1.1rem;
+}
+
+.inputBox input,
+.inputGroupFull input,
+.textareaBox textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9e2ec;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.inputBox input:focus,
+.inputGroupFull input:focus,
+.textareaBox textarea:focus {
+  outline: none;
+  border-color: var(--cor-texto);
+  box-shadow: 0 0 0 3px rgba(30, 128, 168, 0.15);
+}
+
+.textareaBox textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.data {
+  color: var(--cor-explicacao);
+}
+
+.buttonsRowFull {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btnDraft {
+  border: none;
+  background: #e5e7eb;
+  color: #374151;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btnDraft:hover {
+  background: #d1d5db;
+}
+
+.btnPublish {
+  border: none;
+  background: var(--cor-botao);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btnPublish:hover:not(:disabled) {
+  background: var(--cor-botao-secundario);
+
+  transform: translateY(-2px);
+}
+
+.btnPublish:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.sectionTitle {
+  grid-column: 1 / -1;
+  color: var(--cor-principal);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eef2f7;
+  margin-top: 10px;
+}

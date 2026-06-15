@@ -19,11 +19,24 @@
 }
 
 .vagaCard h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
   font-weight: 600;
   color: var(--cor-secundaria);
-  margin-bottom: 5px;
-  min-height: 48px; /* mantém altura padrão */
+  min-height: 15px; /* mantém altura padrão */
+}
+.vagaCard span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+.vagaCard svg {
+  gap: 8px;
 }
 
 .vagaCard p {

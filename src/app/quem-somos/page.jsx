@@ -1,48 +1,137 @@
-import style from "./quem-somos.module.css";
+import { FiBriefcase, FiTarget, FiEye, FiAward, FiUser, FiCode,} from "react-icons/fi";
 
-export default function QuemSomos() {
-  return (
-    <div className={style.quemContainer}>
-      <h1>Quem Somos</h1>
+import styles from "./quemSomos.module.css";
+import Footer from "@/components/Footer/Footer";
 
-      <p>
-        O <strong>Empregaki</strong> é uma plataforma digital criada para conectar
-        empresas e profissionais de forma simples e eficiente.
-      </p>
+export default function QuemSomosPage() {
+  return ( <>
+    <main className={styles.container}>
+      {/* HERO */}
+      <section className={styles.hero}>
+        <h1>Sobre o EmpregAki</h1>
 
-      <section>
-        <h2>Missão</h2>
         <p>
-          Facilitar a conexão entre empresas e profissionais, promovendo
-          oportunidades de trabalho de forma acessível.
+          Conectando talentos e oportunidades de forma simples,
+          acessível e eficiente.
         </p>
       </section>
 
-      <section>
-        <h2>Visão</h2>
+      {/* SOBRE */}
+      <section className={styles.card}>
+        <h2>
+          <FiBriefcase />
+          Nossa História
+        </h2>
+
         <p>
-          Ser referência em recrutamento digital e divulgação de vagas.
+          O EmpregAki nasceu para solucionar um problema
+          identificado em Jaguaruana: a dificuldade na
+          divulgação de vagas de emprego e na conexão entre
+          empresas e candidatos.
+        </p>
+
+        <p>
+          Muitas oportunidades eram divulgadas por meios
+          dispersos, dificultando o acesso às informações.
+          Com isso, surgiu a ideia de criar uma plataforma
+          capaz de centralizar vagas e aproximar profissionais
+          e empregadores.
         </p>
       </section>
 
-      <section>
-        <h2>Valores</h2>
-        <ul>
-          <li>Transparência</li>
-          <li>Inovação</li>
-          <li>Acessibilidade</li>
-          <li>Compromisso</li>
-          <li>Ética</li>
-        </ul>
+      {/* MISSÃO VISÃO VALORES */}
+      <section className={styles.grid}>
+        <div className={styles.infoCard}>
+          <FiTarget />
+
+          <h3>Missão</h3>
+
+          <p>
+            Facilitar a conexão entre empresas e candidatos,
+            tornando o processo de recrutamento mais simples,
+            rápido e acessível.
+          </p>
+        </div>
+
+        <div className={styles.infoCard}>
+          <FiEye />
+
+          <h3>Visão</h3>
+
+          <p>
+            Ser referência regional na divulgação de vagas
+            e recrutamento digital.
+          </p>
+        </div>
+
+        <div className={styles.infoCard}>
+          
+          <FiAward />
+
+          <h3>Valores</h3>
+
+          <p>
+            Transparência, inclusão, inovação,
+            acessibilidade e compromisso com a comunidade.
+          </p>
+        </div>
       </section>
 
-      <section>
-        <h2>Nossa História</h2>
+      {/* DESENVOLVEDORES */}
+      <section className={styles.card}>
+        <h2>
+          <FiCode />
+          Quem Desenvolveu o EmpregAki
+        </h2>
+
         <p>
-          O Empregaki surgiu com o objetivo de simplificar o acesso ao mercado de
-          trabalho, conectando talentos e empresas em um só lugar.
+          O EmpregAki foi desenvolvido por jovens estudantes
+          do curso de Análise e Desenvolvimento de Sistemas
+          do Instituto Federal de Educação, Ciência e
+          Tecnologia do Ceará (IFCE) - Campus Jaguaruana.
+        </p>
+
+        <p>
+          O projeto foi criado como parte da disciplina de
+          Projeto Integrador I e II e teve como objetivo aplicar
+          conhecimentos de desenvolvimento web, banco de
+          dados, engenharia de software e experiência do
+          usuário para solucionar um problema real da região.
+        </p>
+
+        <div className={styles.devGrid}>
+          <div className={styles.devCard}>
+            <FiUser />
+            <h3>Ana Paula da Silva Lopes</h3>
+            <span>Desenvolvedora</span>
+          </div>
+
+          <div className={styles.devCard}>
+            <FiUser />
+            <h3>Guilherme Emanuel Rocha Silva</h3>
+            <span>Desenvolvedor</span>
+          </div>
+        </div>
+
+        <div className={styles.devCard}>
+            <FiUser />
+            <h3>Ramon Moreira</h3>
+            <span>Desenvolvedor</span>
+          </div>
+        
+      </section>
+
+      {/* ENCERRAMENTO */}
+      <section className={styles.finalCard}>
+        <h2>Juntos construindo oportunidades.</h2>
+
+        <p>
+          Acreditamos que a tecnologia pode aproximar pessoas,
+          fortalecer empresas e transformar carreiras.
         </p>
       </section>
-    </div>
+    </main>
+      <Footer />
+    </>
   );
 }

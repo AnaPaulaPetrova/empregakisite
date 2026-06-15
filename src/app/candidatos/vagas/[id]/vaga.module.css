@@ -1,0 +1,182 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+  margin-bottom: 25px;
+}
+
+.titulo {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--cor-principal);
+}
+
+.empresa {
+  margin-top: 10px;
+  color: var(--cor-explicacao);
+  font-size: 1rem;
+}
+
+/* INFORMAÇÕES */
+
+.infoVaga {
+  background: white;
+
+  padding: 25px;
+  margin-bottom: 25px;
+
+  border-radius: 16px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.infoItem svg {
+  font-size: 1.1rem;
+  color: var(--cor-texto);
+}
+
+.infoItem span {
+  color: var(--cor-explicacao);
+}
+
+/* SEÇÕES */
+
+.section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  color: var(--cor-principal);
+}
+
+.section p {
+  color: var(--cor-explicacao);
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+}
+
+/* BOTÕES */
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+.buttonInscrever,
+.buttonSecondary {
+  text-decoration: none;
+
+  background: #64748b;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 20px;
+
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.buttonSecondary:hover {
+  opacity: 0.9;
+}
+
+.voltarBtn {
+  text-decoration: none;
+
+  background: #f1f5f9;
+  color: var(--cor-principal);
+
+  border-radius: 10px;
+
+  padding: 10px 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  transition: 0.3s;
+}
+
+.voltarBtn:hover {
+  background: #e2e8f0;
+}
+
+/* ERRO */
+
+.notFound,
+.erro {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .infoVaga {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .titulo {
+    font-size: 1.6rem;
+  }
+}
+
+
+.buttonInscrever{
+  background: var(--cor-botao-secundario);
+  color: white;
+}

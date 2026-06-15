@@ -1,0 +1,176 @@
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--cor-principal);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--cor-explicacao);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* CARDS */
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+
+.card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--cor-principal);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--cor-explicacao);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* MISSÃO VISÃO VALORES */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 20px;
+
+  margin-bottom: 2rem;
+}
+
+.infoCard {
+  background: white;
+  border-radius: 18px;
+  padding: 2rem;
+
+  text-align: center;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+
+  transition: .3s;
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+}
+
+.infoCard svg {
+  font-size: 2rem;
+  color: var(--cor-botao-secundario);
+  margin-bottom: 1rem;
+}
+
+.infoCard h3 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+}
+
+.infoCard p {
+  color: var(--cor-explicacao);
+  line-height: 1.7;
+}
+
+/* DESENVOLVEDORES */
+
+.devGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+
+  margin-top: 2rem;
+}
+
+.devCard {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  transition: .3s;
+}
+
+.devCard:hover {
+  transform: translateY(-5px);
+}
+
+.devCard svg {
+  font-size: 2rem;
+  color: var(--cor-botao-secundario);
+  margin-bottom: 10px;
+}
+
+.devCard h3 {
+  color: var(--cor-principal);
+  margin-bottom: 5px;
+}
+
+.devCard span {
+  color: var(--cor-explicacao);
+}
+
+/* CTA FINAL */
+
+.finalCard {
+  margin-top: 3rem;
+
+  background: linear-gradient(
+    135deg,
+    var(--cor-principal),
+    var(--cor-botao)
+  );
+
+  color: white;
+
+  border-radius: 20px;
+  padding: 3rem;
+
+  text-align: center;
+}
+
+.finalCard h2 {
+  margin-bottom: 1rem;
+}
+
+.finalCard p {
+  font-size: 1.1rem;
+  opacity: .9;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .finalCard {
+    padding: 2rem;
+  }
+}

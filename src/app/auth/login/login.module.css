@@ -1,151 +1,125 @@
-
 .loginContainer {
-    width: 300px;
+    max-width: 500px;
     margin: 40px auto;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 32px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin: auto;
 }
-/* Titulos */
+
 .loginTitulo {
-    font-size: 26px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
     color: var(--cor-principal);
 }
+
 .loginSubtitulo {
-    margin-top: 6px;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 30px;
     color: var(--cor-explicacao);
-    font-size: 14px;
 }
-/* formulario */
+
 .loginForm {
     display: flex;
     flex-direction: column;
-    text-align: left;
-}
-.label {
-    margin-bottom: 4px;
-    font-size: 14px;
-    color: var(--cor-secundario);
-}
-.input {
-    margin-bottom: 16px;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #d1d5db;
-    font-size: 14px;
-}
-/* Botoes */
-.loginButton {
-    width: 100px;
-    padding: 10px;
-    background-color: var(--cor-botao-secundario);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-.loginButton:hover {
-    background-color: var(--cor-botao-secundario);
 }
 
-/* esqueci a senha */
-.loginForgot {
-    display: block;
-    margin: 10px 0;
-    font-size: 14px;
-    color: var(--cor-secundario);
-    text-decoration: none;
-}
-.loginForgot:hover {
-    text-decoration: underline;
-}
-/* separador */
-.loginDivider {
+.loginForm label {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    margin: 16px 0;
-    color: var(--cor-explicacao);
-    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--cor-secundaria);
+    font-weight: 600;
 }
-.loginDivider span {
-    flex: 1;
-    height: 1px;
-    background: #ccc;
-}
-/* Botao google*/
-.googleButton {
+
+.input {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #d1d5db;
-    background-color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--cor-botao);
-    font-weight: bold;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    transition: .2s;
 }
+
+.input:focus {
+    outline: none;
+    border-color: var(--cor-texto);
+    box-shadow: 0 0 0 3px rgba(30,128,168,0.15);
+}
+
 .enterButton {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #d1d5db;
-    background-color: var(--cor-botao-secundario);
-    border-radius: 6px;
-    cursor: pointer;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--cor-botao);
+    color: white;
     font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #fbfafa;
-    font-weight: bold;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
 }
-.googleButton img {
-    width: 18px;
+
+.enterButton:hover {
+    background: var(--cor-botao-secundario);
 }
-.googleButton:hover {
-    background-color: #f8f8f8;
+
+.enterButton:disabled {
+    /* opacity: .7; */
+    cursor: not-allowed;
 }
+
 .error {
-    padding: 12px 16px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     background: #fef2f2;
     border: 1px solid #fecaca;
     color: #dc2626;
-    border-radius: 8px;
-    margin-bottom: 20px;
     text-align: center;
-    font-size: 14px;
-}
-
-.label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #374151;
-    font-weight: 500;
 }
 
 .semConta {
-    margin: 20px 0;
-    font-size: 14px;
-    color: #6b7280;
     text-align: center;
+    margin-top: 20px;
+    color: var(--cor-explicacao);
 }
 
 .cadastro {
-    color: #3b82f6;
-    font-weight: bold;
+    color: var(--cor-texto);
     text-decoration: none;
+    font-weight: 600;
 }
 
 .cadastro:hover {
     text-decoration: underline;
+}
+
+.loginForgot {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: var(--cor-secundaria);
+    text-decoration: none;
+}
+
+.loginForgot:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .loginContainer {
+        margin: 20px;
+        padding: 24px;
+    }
+
+    .loginTitulo {
+        font-size: 1.6rem;
+    }
 }

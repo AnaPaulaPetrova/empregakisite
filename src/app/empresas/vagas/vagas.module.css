@@ -1,0 +1,136 @@
+.container {
+  width: 100%;
+}
+
+.container h1 {
+  color: var(--cor-principal);
+  margin-bottom: 10px;
+}
+
+.total {
+  color: var(--cor-explicacao);
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--cor-principal);
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: var(--cor-explicacao);
+  line-height: 1.6;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.card strong {
+  color: var(--cor-secundaria);
+}
+
+.botoes {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 15px;
+}
+
+.editar,
+.excluir {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.editar {
+  background: var(--cor-botao);
+  color: white;
+}
+
+.editar:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.excluir {
+  background: #dc3545;
+  color: white;
+}
+
+.excluir:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+.statusAtiva {
+  background: #dcfce7;
+  color: #166534;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.statusEncerrada {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.ativa {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.expirada {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.encerrada {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.headerVaga {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}

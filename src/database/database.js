@@ -2,6 +2,8 @@
 
 import pkg from "pg"
  const{Pool} = pkg
+
+ 
 // const connectionString = "postgresql://neondb_owner:npg_Rdt2g5nSQFLX@ep-little-cloud-acpurmki-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require";
 
 const connectionString = process.env.DATABASE_URL;

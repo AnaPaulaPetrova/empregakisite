@@ -1,0 +1,101 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.container h1 {
+  color: var(--cor-principal);
+  margin-bottom: 25px;
+}
+
+.descricao {
+  color: var(--cor-explicacao);
+  margin-bottom: 25px;
+}
+
+.form {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form label {
+  font-weight: 600;
+  color: var(--cor-secundaria);
+  margin-bottom: -8px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d9e2ec;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--cor-texto);
+  box-shadow: 0 0 0 3px rgba(30, 128, 168, 0.15);
+}
+
+.form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form button {
+  margin-top: 10px;
+  background: var(--cor-botao);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: var(--cor-botao-secundario);
+
+  transform: translateY(-2px);
+}
+
+.secao {
+  color: var(--cor-principal);
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eef2f7;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 6px;
+
+  font-weight: 600;
+  color: var(--cor-principal);
+}
+
+.label svg {
+  color: var(--cor-texto);
+  font-size: 1rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}

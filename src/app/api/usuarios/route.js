@@ -1,13 +1,12 @@
 import {database} from "@/database/database";
 
-import React from 'react'
 
 export default async function POST(req) {
     const usuario = await req.json();
     const {nome, email, senha} = usuario;
 
     const sql = `
-        INSERT INTO usuarios (nome, email, senha) values ($1, $2, $3)
+        INSERT INTO login (nome, email, senha_hash) values ($1, $2, $3)
         RETURNING *
     `;
 
@@ -18,7 +17,7 @@ export default async function POST(req) {
 
 
 export default async function GET() {
-    const sql = ` SELECT * FROM usuarios`;
+    const sql = ` SELECT * FROM login `;
 
     const result = await database.query(sql);
 
