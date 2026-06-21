@@ -45,8 +45,9 @@ export async function POST(req) {
       [token, expira, email]
     );
 
-    // Por enquanto, apenas para teste
-    console.log("Token gerado:", token);
+    const link = `http://localhost:3000/auth/redefinir-senha?token=${token}`;
+
+console.log("Link de recuperação:", link);
 
     return Response.json({
       message:

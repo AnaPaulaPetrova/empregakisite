@@ -5,13 +5,16 @@ export async function POST(req) {
   try {
     const { token, novaSenha } = await req.json();
 
+    console.log("TOKEN RECEBIDO:", token);
+    console.log("NOVA SENHA:", novaSenha);
+
     if (!token || !novaSenha) {
       return Response.json(
         { error: "Dados inválidos." },
         { status: 400 }
       );
     }
-
+      console.log("BUSCANDO TOKEN NO BANCO...");
     // Procura um usuário com esse token
     const result = await database.query(
       `

@@ -1,19 +1,26 @@
 "use client"
 
-import { useSearchParams } from 'next/navigation'
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useSearchParams, useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react';
 import styles from "./redefinirSenha.module.css";
 
 
 export default function RedefinirSenha() {
     const searchParams = useSearchParams();
-    const router = useRouter;
+    const router = useRouter();
 
     const token = searchParams.get("token");
 
+    useEffect(() => {
+      console.log("TOKEN DA URL:", token);
+    }, [token]);
+
+
     const [novaSenha, setNovaSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");
+
+    console.log("Token", token);
+    
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -22,6 +29,8 @@ export default function RedefinirSenha() {
             alert("As senhas não coincidem.");
             return;
         }
+        console.log({token, novaSenha, });
+        
 
         try {
             const resposta = await fetch("/api/auth/redefinir-senha", {
