@@ -4,10 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-import {
-  FiMail,
-  FiLock,
-} from "react-icons/fi";
+import { FiMail, FiLock, } from "react-icons/fi";
 
 import styles from "./login.module.css";
 
@@ -98,10 +95,7 @@ export default function Login() {
         onSubmit={handleLogin}
         className={styles.loginForm}
       >
-        <label>
-          <FiMail />
-          E-mail
-        </label>
+        <label> <FiMail /> E-mail </label>
 
         <input
           className={styles.input}
@@ -115,10 +109,7 @@ export default function Login() {
           disabled={loading}
         />
 
-        <label>
-          <FiLock />
-          Senha
-        </label>
+        <label> <FiLock /> Senha </label>
 
         <input
           className={styles.input}
@@ -141,9 +132,7 @@ export default function Login() {
             !senha
           }
         >
-          {loading
-            ? "Entrando..."
-            : "Entrar"}
+          { loading ? "Entrando..." : "Entrar" }
         </button>
       </form>
 

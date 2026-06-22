@@ -5,10 +5,11 @@ import VagasCard from "@/components/VagasCard/VagasCard";
 import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
+import CarrosselVagas from "@/components/CarrosselVagas/CarrosselVagas";
 
 export default async function Home() {
   const resposta = await fetch(
-    "http://localhost:3000/api/vagas",
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/vagas`,
     {
       cache: "no-store",
     }
@@ -16,7 +17,7 @@ export default async function Home() {
   
   const vagas = await resposta.json();
   const respostaStats = await fetch(
-    "http://localhost:3000/api/dashboard",
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/dashboard`,
     {
       cache: "no-store",
     }
@@ -90,37 +91,7 @@ export default async function Home() {
       </section>
 
       {/* VAGAS */}
-      <section className={styles.vagasSection}>
-        <div className={styles.vagasHeader}>
-          <div>
-            <h2>Vagas em destaque</h2>
-
-            <p>
-              Confira as oportunidades mais recentes.
-            </p>
-          </div>
-
-          <Link href="/vagas">
-            <button className={styles.bntVerTodas}>
-              Ver todas →
-            </button>
-          </Link>
-        </div>
-
-        <div className={styles.vagasCards}>
-          {vagas.slice(0, 5).map((vaga) => (
-            <VagasCard
-              key={vaga.id}
-              id={vaga.id}
-              titulo={vaga.titulo}
-              empresaNome={vaga.empresa_nome}
-              localizacao={vaga.localizacao}
-              // descricao={vaga.descricao}
-              salario ={vaga.salario}
-            />
-          ))}
-        </div>
-      </section>
+      <CarrosselVagas vagas={vagas.slice(0, 5)} />
 
       <Beneficios />
 

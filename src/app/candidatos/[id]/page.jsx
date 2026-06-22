@@ -1,22 +1,23 @@
+import { database } from "@/database/database";
 import CandidatoClient from "./candidatoClient";
 
 async function buscarCandidato(id) {
-  console.log("ID RECEBIDO:", id);
-  const res = await fetch(`http://localhost:3000/api/candidatos/${id}`, {
-    cache: "no-store",
-  }
-);
-console.log("STATUS:", res.status);
+  const result = await database.query(
+    `
+    SELECT *
+    FROM candidatos
+    WHERE id = $1
+    `,
+    [id]
+  );
 
-  if (!res.ok) return null;
-
-  return res.json();
+  return result.rows[0] || null;
 }
 
 export default async function CandidatoPage({ params }) {
   const { id } = await params;
+
   const candidato = await buscarCandidato(id);
-  console.log("CANDIDATO:", candidato);
 
   return <CandidatoClient candidato={candidato} id={id} />;
 }

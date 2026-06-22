@@ -1,4 +1,5 @@
 import { database } from "@/database/database";
+import { enviarEmailRecuperacao } from "@/lib/email";
 import crypto from "crypto";
 
 export async function POST(req) {
@@ -31,7 +32,7 @@ export async function POST(req) {
     const token = crypto.randomBytes(32).toString("hex");
 
     // Define validade de 1 hora
-    const expira = new Date(Date.now() + 60 * 60 * 1000);
+    const expira = new Date(Date.now() + 3 * 60 * 1000);
 
     // Salva o token no banco
     await database.query(
@@ -45,7 +46,9 @@ export async function POST(req) {
       [token, expira, email]
     );
 
-    const link = `http://localhost:3000/auth/redefinir-senha?token=${token}`;
+    const link = `${process.env.NEXT_PUBLIC_APP_URL}/auth/redefinir-senha?token=${token}`;
+
+    await enviarEmailRecuperacao(email, link);
 
 console.log("Link de recuperação:", link);
 

@@ -16,7 +16,7 @@ export default async function POST(req) {
 }
 
 
-export default async function GET() {
+export async function GET() {
     const sql = ` SELECT * FROM login `;
 
     const result = await database.query(sql);

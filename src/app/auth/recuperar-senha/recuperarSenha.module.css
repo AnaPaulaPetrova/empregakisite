@@ -1,8 +1,9 @@
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 500px;
+    margin: 40px auto;
+    padding: 32px;
+    background: white;
+    border-radius: 18px;
 }
 
 .card {
@@ -15,34 +16,75 @@
 }
 
 .card h1 {
-  margin-bottom: 1rem;
+   text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-principal);
 }
 
 .card p {
-  margin-bottom: 1.5rem;
+  text-align: center;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    color: var(--cor-explicacao);
+    line-height: 1.5;
 }
 
 .grupo {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
 }
 
 .grupo label {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    color: var(--cor-secundaria);
+    font-weight: 600;
 }
 
 .grupo input {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.grupo input:focus {
+    outline: none;
+    border-color: var(--cor-texto);
+    box-shadow: 0 0 0 3px rgba(30, 128, 168, 0.15);
 }
 
 .botao {
   width: 100%;
-  padding: 0.9rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--cor-botao);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.botao:hover {
+    background: var(--cor-botao-secundario);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 24px;
+    }
+
+    .card h1 {
+        font-size: 1.6rem;
+    }
 }

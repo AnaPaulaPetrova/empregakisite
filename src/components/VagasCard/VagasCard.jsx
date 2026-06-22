@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FiMapPin, FiBriefcase, FiHome, FiDollarSign, FiUsers, } from "react-icons/fi";
 import styles from "./vagasCard.module.css";
 
-export default async function VagasCard({id, titulo, empresaNome, localizacao,salario, descricao}) {
+export default function VagasCard({id, titulo, empresaNome, localizacao,salario, descricao}) {
 
   return (
    <> 

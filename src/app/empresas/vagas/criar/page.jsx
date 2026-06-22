@@ -85,7 +85,9 @@ export default function CriarVaga() {
                 name="titulo"
                 placeholder="Título..." 
                 value={form.titulo} 
-                onChange={handleChange} required />
+                onChange={handleChange}
+                required 
+              />
             </div>
           </div>
 
@@ -100,7 +102,9 @@ export default function CriarVaga() {
                 name="descricao" 
                 placeholder="Descreva a vaga..." 
                 value={form.descricao} 
-                onChange={handleChange} required />
+                onChange={handleChange}
+                required 
+              />
             </div>
           </div>
         
@@ -116,7 +120,9 @@ export default function CriarVaga() {
                 rows={5}
                 placeholder="Descreva os Requisitos da vaga..." 
                 value={form.requisitos} 
-                onChange={handleChange} >
+                onChange={handleChange}
+                required  
+              >
               </textarea>
               </div>
             </div>
@@ -133,6 +139,7 @@ export default function CriarVaga() {
                   placeholder="Descreva as principais responsabilidades da vaga..."
                   value={form.responsabilidades}
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -149,6 +156,7 @@ export default function CriarVaga() {
                   placeholder="Informe os diferenciais desejáveis para a vaga..."
                   value={form.diferenciais}
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -165,6 +173,7 @@ export default function CriarVaga() {
                   placeholder="Descreva os benefícios oferecidos pela empresa..."
                   value={form.beneficios}
                   onChange={handleChange}
+                  required
                 />
               </div>
             </div>
@@ -181,10 +190,12 @@ export default function CriarVaga() {
 
           <div className={styles.inputBox}>
             <input
-            name="area_atuacao" 
-            placeholder="Saúde e Bem-Estar, Tecnologia e Informação" 
-            value={form.area_atuacao} 
-            onChange={handleChange} />
+              name="area_atuacao" 
+              placeholder="Saúde e Bem-Estar, Tecnologia e Informação" 
+              value={form.area_atuacao} 
+              onChange={handleChange} 
+              required
+            />
           </div>
         </div>
         {/* TIPO DE CONTRATO */}
@@ -200,6 +211,7 @@ export default function CriarVaga() {
               placeholder="Ex: CLT, PJ, Estágio..."
               value={form.tipo_contrato}
               onChange={handleChange}
+              required
             />
           </div>
         </div>
@@ -217,7 +229,9 @@ export default function CriarVaga() {
               name="salario" 
               placeholder="Ex.: 2.500,00" 
               value={form.salario} 
-              onChange={handleChange} />
+              onChange={handleChange} 
+              required
+              />
           </div>
         </div>
 
@@ -234,7 +248,8 @@ export default function CriarVaga() {
               placeholder="Rua... N°..." 
               value={form.localizacao} 
               onChange={handleChange} 
-              required />
+              required
+            />
           </div>
         </div>
         
@@ -251,7 +266,9 @@ export default function CriarVaga() {
               name="carga_horaria" 
               placeholder="Ex.: 20h" 
               value={form.carga_horaria} 
-              onChange={handleChange} />
+              onChange={handleChange}
+              required
+            />
           </div>
         </div>
         <div className={styles.sectionTitle}>
@@ -287,7 +304,9 @@ export default function CriarVaga() {
               name="contato" 
               placeholder="88 9 ****-****" 
               value={form.contato} 
-              onChange={handleChange} required />
+              onChange={handleChange} 
+              required 
+            />
           </div>
         </div>
 
@@ -303,7 +322,9 @@ export default function CriarVaga() {
             type="date" 
             name="data_limite" 
             value={form.data_limite} 
-            onChange={handleChange} />
+            onChange={handleChange} 
+            required 
+          />
         </div>
         
         {/* BOTÕES */}

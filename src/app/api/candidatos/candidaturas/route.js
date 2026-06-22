@@ -99,6 +99,29 @@ export async function POST(req) {
       );
     }
 
+    // Verifica se o candidato possui currículo
+    const candidato = await database.query(
+      `
+      SELECT curriculo
+      FROM candidatos
+      WHERE id = $1
+      `,
+      [decoded.candidato_id]
+    );
+
+    if (
+      candidato.rows.length === 0 ||
+      !candidato.rows[0].curriculo
+    ) {
+      return Response.json(
+        {
+          error: "Você precisa cadastrar um currículo antes de se candidatar.",
+          redirecionar: "/candidatos/editarperfil",
+        },
+        { status: 400 }
+      );
+    }
+
     // Verifica candidatura duplicada
     const existe = await database.query(
       `

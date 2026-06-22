@@ -1,0 +1,84 @@
+.vagasSection {
+  max-width: 1320px;
+  margin: auto;
+  padding: 20px 30px;
+}
+
+.vagasHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.vagasHeader h2 {
+  color: var(--cor-principal);
+  font-size: 2rem;
+}
+
+.vagasHeader p {
+  color: var(--cor-explicacao);
+  margin-top: 5px;
+}
+
+.btnVerTodas {
+  border: none;
+  background: transparent;
+  color: var(--cor-principal);
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.btnVerTodas:hover {
+  transform: translateY(-3px);
+  color: var(--cor-botao);
+}
+
+/* Faz o card ocupar a altura total do slide */
+.vagasSection :global(.swiper-slide) {
+  height: auto;
+  display: flex;
+}
+
+.vagasSection :global(.swiper-slide > *) {
+  width: 100%;
+}
+
+/* Espaço da paginação */
+.vagasSection :global(.swiper-pagination) {
+  position: relative;
+  margin-top: 25px;
+}
+
+:global(.swiper-button-prev),
+:global(.swiper-button-next) {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  color: var(--cor-principal);
+}
+
+:global(.swiper-button-prev::after),
+:global(.swiper-button-next::after) {
+  font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .vagasHeader {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .vagasHeader h2 {
+    font-size: 1.6rem;
+  }
+
+  .btnVerTodas {
+    font-size: 14px;
+  }
+}

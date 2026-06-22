@@ -1,6 +1,7 @@
-import styles from "./candidatos.module.css"
+import styles from "./candidato.module.css"
 async function getCandidatos(id) {
-    const res = await fetch(`http://localhost:3000/api/empresas/vagas/${id}/candidatos`,
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/empresas/vagas/${id}/candidatos`,
     {
       cache: "no-store",
     });

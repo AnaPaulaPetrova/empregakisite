@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FiMail } from "react-icons/fi";
 import styles from "./recuperarSenha.module.css";
 
 export default function RecuperarSenha() {
@@ -49,7 +50,7 @@ export default function RecuperarSenha() {
 
         <form onSubmit={handleSubmit}>
           <div className={styles.grupo}>
-            <label>E-mail</label>
+            <label><FiMail /> E-mail</label>
             <input
               type="email"
               placeholder="Digite seu e-mail"

@@ -52,20 +52,21 @@ export async function GET(req) {
     const vagasResult = await database.query(
       `
       SELECT
-    vd.*,
-    iu.nome AS nome_empresa
-  FROM vagas_disponiveis vd
-  LEFT JOIN empresas e
-    ON e.id = vd.id_empresa
-  LEFT JOIN info_usuarios iu
-    ON iu.id = e.id_info_usuarios
-  WHERE NOT EXISTS (
-    SELECT 1
-    FROM candidato_vaga cv
-    WHERE cv.id_vaga = vd.id
-      AND cv.id_candidato = $1
+        vd.*,
+        iu.nome AS nome_empresa
+      FROM vagas_disponiveis vd
+      LEFT JOIN empresas e
+        ON e.id = vd.id_empresa
+      LEFT JOIN info_usuarios iu
+        ON iu.id = e.id_info_usuarios
+      WHERE NOT EXISTS (
+        SELECT 1
+        FROM candidato_vaga cv
+        WHERE cv.id_vaga = vd.id
+          AND cv.id_candidato = $1
   )
-  
+    AND vd.data_limite >= CURRENT_DATE
+  ORDER BY vd.data_limite ASC NULLS LAST
       
       `,
       [candidatoId]

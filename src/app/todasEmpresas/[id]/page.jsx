@@ -4,8 +4,8 @@ import { FiBriefcase, FiMapPin, FiPhone, FiFileText, FiUsers,
 import styles from "./empresa.module.css";
 
 async function getEmpresa(id) {
-  const res = await fetch(
-    `http://localhost:3000/api/todasEmpresas/${id}`,
+  const res = await fetch(`
+    ${process.env.NEXT_PUBLIC_API_URL}/api/todasEmpresas/${id}`,
     {
       cache: "no-store",
     }

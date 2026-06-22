@@ -74,6 +74,123 @@
   font-size: 16px;
 }
 
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(54, 169, 154, 0.15);
+  color: var(--cor-botao-secundario);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btnPrincipal {
+  width: 190px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  background: var(--cor-botao);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnPrincipal:hover {
+  background: var(--cor-botao-secundario);
+}
+
+.btnSecundario {
+  width: 190px;
+  height: 60px;
+  border-radius: 10px;
+  border: 2px solid var(--cor-botao);
+  background: transparent;
+  color: var(--cor-botao);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnSecundario:hover {
+  background: var(--cor-botao);
+  color: white;
+}
+
+.stats {
+  max-width: 1320px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.stat {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.stat h3 {
+  color: var(--cor-principal);
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.stat span {
+  color: var(--cor-explicacao);
+}
+
+.bannerContainer {
+  max-width: 1320px;
+  width: 100%;
+  margin: 30px auto;
+  border-radius: 24px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(15,58,95,0.05),
+    rgba(54,169,154,0.08)
+  );
+}
+
+.vagasHeader p {
+  color: var(--cor-explicacao);
+  margin-top: 5px;
+}
+
+.cta {
+  max-width: 1320px;
+  margin: 80px auto;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 24px;
+  background: var(--cor-principal);
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  max-width: 700px;
+
+  margin: auto auto 30px;
+
+  opacity: .9;
+}
 
 @media (max-width: 1024px) {
   .bannerContainer {
@@ -105,162 +222,4 @@
     width: 100%;
     padding: 20px;
   }
-}
-
-.badge {
-  display: inline-block;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  background: rgba(54, 169, 154, 0.15);
-
-  color: var(--cor-botao-secundario);
-
-  font-weight: 600;
-
-  margin-bottom: 20px;
-}
-
-.heroButtons {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.btnPrincipal {
-  width: 190px;
-  height: 60px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: var(--cor-botao);
-
-  color: white;
-
-  font-size: 18px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.btnPrincipal:hover {
-  background: var(--cor-botao-secundario);
-}
-
-.btnSecundario {
-  width: 190px;
-  height: 60px;
-
-  border-radius: 10px;
-
-  border: 2px solid var(--cor-botao);
-
-  background: transparent;
-
-  color: var(--cor-botao);
-
-  font-size: 18px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.btnSecundario:hover {
-  background: var(--cor-botao);
-  color: white;
-}
-
-.stats {
-  max-width: 1320px;
-
-  margin: 40px auto;
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 20px;
-}
-
-.stat {
-  background: white;
-
-  padding: 25px;
-
-  border-radius: 16px;
-
-  text-align: center;
-
-  box-shadow: 0 4px 15px rgba(0,0,0,.08);
-}
-
-.stat h3 {
-  color: var(--cor-principal);
-
-  font-size: 2rem;
-
-  margin-bottom: 8px;
-}
-
-.stat span {
-  color: var(--cor-explicacao);
-}
-
-.bannerContainer {
-  max-width: 1320px;
-
-  width: 100%;
-
-  margin: 30px auto;
-
-  border-radius: 24px;
-
-  overflow: hidden;
-
-  background: linear-gradient(
-    135deg,
-    rgba(15,58,95,0.05),
-    rgba(54,169,154,0.08)
-  );
-}
-
-.vagasHeader p {
-  color: var(--cor-explicacao);
-  margin-top: 5px;
-}
-
-.cta {
-  max-width: 1320px;
-
-  margin: 80px auto;
-
-  padding: 60px 20px;
-
-  text-align: center;
-
-  border-radius: 24px;
-
-  background: var(--cor-principal);
-
-  color: white;
-}
-
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.cta p {
-  max-width: 700px;
-
-  margin: auto auto 30px;
-
-  opacity: .9;
 }

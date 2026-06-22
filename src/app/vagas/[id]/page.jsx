@@ -4,9 +4,12 @@ import { FiMapPin, FiDollarSign, FiBriefcase, FiFileText, FiCheckCircle, FiAward
 import styles from "./vaga.module.css";
 
 async function getVaga(id) {
-  const res = await fetch(`http://localhost:3000/api/vagas/${id}`, {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/vagas/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) return null;
 

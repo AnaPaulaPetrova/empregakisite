@@ -5,14 +5,7 @@ import { useEffect, useState } from "react";
 import { cpf, cnpj } from "cpf-cnpj-validator";
 import { IMaskInput } from "react-imask";
 
-import {
-  FiUser,
-  FiMail,
-  FiPhone,
-  FiMapPin,
-  FiLock,
-  FiBriefcase,
-} from "react-icons/fi";
+import { FiUser, FiMail, FiPhone, FiMapPin, FiLock, FiBriefcase,} from "react-icons/fi";
 
 import styles from "./cadastro.module.css";
 

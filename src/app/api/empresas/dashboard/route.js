@@ -47,6 +47,7 @@ export async function GET(req) {
           FROM vagas_disponiveis
           WHERE id_empresa = $1
           AND ativo = true
+          AND data_limite >= CURRENT_DATE
         ) AS vagas_ativas,
 
         (

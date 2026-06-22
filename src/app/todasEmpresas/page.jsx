@@ -3,9 +3,12 @@ import { FiMapPin, FiDollarSign, FiFileText, FiBriefcase, FiArrowRight, FiPhone,
 import styles from "./empresas.module.css";
 
 async function getEmpresas() {
-  const res = await fetch("http://localhost:3000/api/todasEmpresas", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_APP_URL}/api/todasEmpresas`,
+    {
+      cache: "no-store",
+    }
+  );
 
   if (!res.ok) return [];
 

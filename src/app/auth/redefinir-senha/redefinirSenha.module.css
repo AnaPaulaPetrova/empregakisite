@@ -1,0 +1,102 @@
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 32px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.card h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--cor-principal);
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--cor-explicacao);
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    color: var(--cor-secundaria);
+    font-weight: 600;
+}
+
+.grupo input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.grupo input:focus {
+    outline: none;
+    border-color: var(--cor-texto);
+    box-shadow: 0 0 0 3px rgba(30, 128, 168, 0.15);
+}
+
+.sucesso {
+    color: #16a34a;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.erro {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.botao {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: var(--cor-botao);
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.botao:hover {
+    background: var(--cor-botao-secundario);
+}
+
+.botao:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 24px;
+    }
+
+    .card h1 {
+        font-size: 1.6rem;
+    }
+}
